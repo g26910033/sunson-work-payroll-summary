@@ -5,558 +5,263 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#133c3b">
   <meta name="robots" content="noindex,nofollow">
-  <meta name="description" content="紐西蘭 Sunson 工作排班、四期雙週薪資實績、紐幣換算、工時估值、生活成本與退稅儲蓄情境整理。資料基準：2026 年 10 月 9 日。">
-  <title>Sunson 工作與收支整理｜紐西蘭打工度假</title>
+  <meta name="description" content="Sunson 紐西蘭工作排班、薪資與收支摘要。資料基準：2026 年 10 月 9 日。">
+  <title>Sunson 工作收支｜紐西蘭打工度假</title>
   <style>
     :root {
-      color-scheme: light;
       --ink: #153d3b;
-      --ink-2: #365b58;
-      --muted: #657b76;
-      --paper: #f6f4ed;
+      --muted: #607773;
+      --paper: #f5f4ed;
       --card: #fffefa;
       --line: #dce4dc;
-      --mint: #dcece3;
-      --mint-strong: #b9d7c9;
-      --ochre: #e7b85e;
-      --ochre-pale: #fbf1d9;
-      --coral: #c66b51;
-      --coral-pale: #f8e7df;
-      --shadow: 0 14px 42px rgba(21, 61, 59, .08);
-      --radius: 22px;
+      --mint: #e1eee6;
+      --gold: #e7bd68;
+      --soft-gold: #fbf3df;
+      --soft-red: #f8e8df;
+      --shadow: 0 10px 28px rgba(21, 61, 59, .07);
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      background: var(--paper);
       color: var(--ink);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
-      font-size: 16px;
-      line-height: 1.65;
+      background: var(--paper);
+      font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
     }
     a { color: #17625d; text-underline-offset: 3px; }
-    a:hover { color: #0c403d; }
-    button, input { font: inherit; }
-    button:focus-visible, input:focus-visible, a:focus-visible {
-      outline: 3px solid #c88046;
-      outline-offset: 3px;
+    a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visible { outline: 3px solid #c88046; outline-offset: 3px; }
+    .page { width: min(calc(100% - 32px), 920px); margin: 0 auto; }
+    .hero { margin: 20px 0 14px; padding: clamp(24px, 5vw, 40px); border-radius: 25px; color: #f7f8f1; background: linear-gradient(120deg, #133c3b, #286358); box-shadow: var(--shadow); }
+    .eyebrow { margin: 0 0 5px; color: #efd38d; font-size: .8rem; font-weight: 800; letter-spacing: .08em; }
+    h1 { margin: 0; font-size: clamp(2rem, 6vw, 3rem); line-height: 1.12; letter-spacing: -.04em; }
+    .hero p:last-child { max-width: 610px; margin: 11px 0 0; color: #e0ebe3; font-size: .94rem; }
+    .badges { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 16px; }
+    .badge { display: inline-flex; align-items: center; min-height: 27px; padding: 3px 10px; border: 1px solid rgba(255,255,255,.25); border-radius: 999px; color: #f7f8f1; font-size: .75rem; font-weight: 730; }
+    .stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 11px; margin: 0 0 12px; }
+    .stat { min-width: 0; padding: 16px; border: 1px solid var(--line); border-radius: 18px; background: var(--card); box-shadow: 0 5px 18px rgba(21,61,59,.035); }
+    .stat-label { display: block; color: var(--muted); font-size: .78rem; font-weight: 750; }
+    .stat-value { display: block; margin-top: 5px; font-size: clamp(1.2rem, 3vw, 1.65rem); font-weight: 870; letter-spacing: -.035em; line-height: 1.25; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+    .stat-twd { display: block; margin-top: 5px; color: #37655d; font-size: .81rem; font-weight: 740; font-variant-numeric: tabular-nums; }
+    .stat-note { display: block; margin-top: 5px; color: var(--muted); font-size: .72rem; }
+    .ratebar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 18px; margin-bottom: 13px; padding: 12px 15px; border: 1px solid var(--line); border-radius: 15px; background: rgba(255,254,250,.8); }
+    .ratebar label { color: var(--ink); font-size: .83rem; font-weight: 800; }
+    .rate-input { display: inline-flex; align-items: center; gap: 7px; }
+    .rate-input input { width: 83px; padding: 5px 7px; border: 1px solid #b8cbc1; border-radius: 8px; background: white; color: var(--ink); font-size: .94rem; font-weight: 780; font-variant-numeric: tabular-nums; }
+    .ratebar small { flex: 1 1 290px; color: var(--muted); font-size: .74rem; }
+    .quick-info { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; margin-bottom: 13px; }
+    .quick-card { padding: 15px 17px; border: 1px solid var(--line); border-radius: 17px; background: var(--card); }
+    .quick-card h2 { margin: 0 0 4px; font-size: .87rem; }
+    .quick-value { display: flex; flex-wrap: wrap; gap: 7px 13px; align-items: baseline; font-weight: 820; font-variant-numeric: tabular-nums; }
+    .quick-value strong { font-size: 1.32rem; letter-spacing: -.025em; }
+    .quick-value span { color: var(--muted); font-size: .82rem; }
+    .quick-note { margin: 5px 0 0; color: var(--muted); font-size: .75rem; }
+    .refund { margin: 0 0 13px; padding: 18px; border: 1px solid #ecd9aa; border-radius: 18px; background: var(--soft-gold); }
+    .refund-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 5px 14px; }
+    .refund h2 { margin: 0; font-size: 1rem; }
+    .refund-total { font-size: 1.24rem; font-weight: 850; font-variant-numeric: tabular-nums; }
+    .scenario-line { display: flex; flex-wrap: wrap; gap: 6px 19px; margin-top: 9px; color: #604e29; font-size: .84rem; }
+    .scenario-line b { color: var(--ink); font-variant-numeric: tabular-nums; }
+    .refund p { margin: 8px 0 0; color: #6f633f; font-size: .74rem; }
+    details.panel { margin: 0 0 11px; border: 1px solid var(--line); border-radius: 17px; background: var(--card); box-shadow: 0 5px 18px rgba(21,61,59,.025); }
+    details.panel > summary { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 18px; cursor: pointer; font-weight: 820; list-style: none; }
+    details.panel > summary::-webkit-details-marker, details.week > summary::-webkit-details-marker { display: none; }
+    details.panel > summary::after { flex: 0 0 auto; width: 24px; height: 24px; border-radius: 50%; background: var(--mint); color: var(--ink); content: "+"; text-align: center; line-height: 24px; }
+    details.panel[open] > summary::after { content: "−"; }
+    .summary-hint { margin-left: auto; color: var(--muted); font-size: .75rem; font-weight: 600; text-align: right; }
+    .panel-body { padding: 0 18px 18px; }
+    .panel-body h2 { margin: 14px 0 8px; font-size: 1rem; }
+    .panel-body h2:first-child { margin-top: 0; }
+    .intro { margin: 0 0 12px; color: var(--muted); font-size: .82rem; }
+    .pays { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 9px; }
+    .pay { padding: 12px; border: 1px solid #e6ebe4; border-radius: 13px; background: #fff; }
+    .pay-top { display: flex; justify-content: space-between; gap: 8px; margin-bottom: 7px; }
+    .pay-top strong { font-size: .88rem; }
+    .pay-top span { color: var(--muted); font-size: .72rem; text-align: right; }
+    .pay-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 5px; }
+    .pay-cell { padding: 6px 7px; border-radius: 8px; background: #f5f8f3; }
+    .pay-cell small { display: block; color: var(--muted); font-size: .66rem; }
+    .pay-cell b { display: block; margin-top: 1px; font-size: .78rem; font-variant-numeric: tabular-nums; }
+    .week-list { display: grid; gap: 6px; }
+    details.week { border: 1px solid #e6ebe4; border-radius: 12px; background: #fff; }
+    details.week > summary { display: grid; grid-template-columns: minmax(115px, .8fr) minmax(0,1.5fr) auto; gap: 8px; align-items: center; padding: 10px 12px; cursor: pointer; list-style: none; }
+    .week-name { font-size: .82rem; font-weight: 800; }
+    .week-hours { color: var(--ink-2, #365b58); font-size: .78rem; font-variant-numeric: tabular-nums; }
+    .status { padding: 3px 7px; border-radius: 999px; background: var(--soft-gold); color: #76571c; font-size: .66rem; font-weight: 760; text-align: center; white-space: nowrap; }
+    .status.actual { background: var(--mint); color: #24624f; }
+    .status.pending { background: var(--soft-red); color: #904b35; }
+    .week-detail { padding: 0 12px 10px; color: var(--muted); font-size: .77rem; }
+    .week-detail p { margin: 0; }
+    .cost-line { display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; border-bottom: 1px solid #edf0eb; font-size: .82rem; }
+    .cost-line:last-child { border-bottom: 0; }
+    .cost-line span { color: var(--muted); }
+    .cost-line strong { text-align: right; font-variant-numeric: tabular-nums; }
+    .assumptions { display: grid; gap: 7px; margin: 0; padding-left: 18px; color: #435c57; font-size: .81rem; }
+    .assumptions li::marker { color: #a57d3e; }
+    .source-links { margin-top: 12px; color: var(--muted); font-size: .78rem; }
+    footer { padding: 5px 0 30px; color: var(--muted); font-size: .74rem; text-align: center; }
+    @media (max-width: 680px) {
+      .page { width: min(calc(100% - 22px), 920px); }
+      .hero { margin-top: 11px; padding: 22px 19px; border-radius: 20px; }
+      .stats { grid-template-columns: 1fr; gap: 7px; }
+      .stat { display: grid; grid-template-columns: 1fr auto; align-items: baseline; gap: 2px 8px; padding: 11px 13px; border-radius: 14px; }
+      .stat-label { grid-column: 1; grid-row: 1; }
+      .stat-value { grid-column: 2; grid-row: 1; margin: 0; font-size: 1.2rem; text-align: right; }
+      .stat-twd { grid-column: 1 / -1; grid-row: 2; margin-top: 1px; font-size: .73rem; }
+      .stat-note { grid-column: 1 / -1; margin-top: 4px; }
+      .quick-info { gap: 7px; }
+      .quick-card { padding: 12px; }
+      .quick-value { gap: 3px 7px; }
+      .quick-value strong { font-size: 1.14rem; }
+      .pays { grid-template-columns: 1fr; }
+      .pay-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .pay-cell:last-child { grid-column: 1 / -1; }
+      details.panel > summary { padding: 14px; }
+      .panel-body { padding: 0 13px 14px; }
+      details.week > summary { grid-template-columns: 1fr auto; gap: 4px 8px; }
+      .week-hours { grid-column: 1; grid-row: 2; }
+      .status { grid-column: 2; grid-row: 1 / span 2; }
     }
-    .page { width: min(1120px, calc(100% - 36px)); margin: 0 auto; }
-    .topbar { padding: 22px 0 0; }
-    .brandline { display: flex; align-items: center; gap: 10px; color: var(--ink-2); font-size: .82rem; font-weight: 750; letter-spacing: .1em; text-transform: uppercase; }
-    .brandmark { display: grid; place-items: center; width: 31px; height: 31px; border-radius: 10px 10px 10px 3px; background: var(--ink); color: #f9e8bd; font-size: .74rem; letter-spacing: 0; }
-    .hero {
-      position: relative;
-      overflow: hidden;
-      margin: 18px 0 20px;
-      padding: clamp(28px, 5vw, 54px);
-      border-radius: 30px;
-      color: #f5f7ef;
-      background: linear-gradient(118deg, #133c3b 0%, #1d5751 68%, #467767 100%);
-      box-shadow: var(--shadow);
-    }
-    .hero::after {
-      position: absolute;
-      right: -70px;
-      bottom: -190px;
-      width: 390px;
-      height: 390px;
-      border: 1px solid rgba(251, 241, 217, .25);
-      border-radius: 50%;
-      box-shadow: 0 0 0 34px rgba(251,241,217,.045), 0 0 0 75px rgba(251,241,217,.035);
-      content: "";
-      pointer-events: none;
-    }
-    .eyebrow { margin: 0 0 10px; color: #e9cc88; font-size: .82rem; font-weight: 800; letter-spacing: .12em; }
-    h1 { max-width: 750px; margin: 0; font-size: clamp(2rem, 5vw, 3.35rem); line-height: 1.15; letter-spacing: -.045em; }
-    .hero-copy { max-width: 690px; margin: 16px 0 0; color: #dcebe4; font-size: 1.02rem; }
-    .hero-note { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 25px; }
-    .pill { display: inline-flex; align-items: center; gap: 7px; min-height: 30px; padding: 4px 11px; border: 1px solid rgba(242, 246, 236, .23); border-radius: 999px; color: #f1f5ec; font-size: .78rem; font-weight: 720; }
-    .pill-dot { width: 7px; height: 7px; border-radius: 50%; background: #edc56e; }
-    .stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 0 0 22px; }
-    .stat { min-height: 150px; padding: 19px; border: 1px solid var(--line); border-radius: 19px; background: var(--card); box-shadow: 0 7px 22px rgba(21,61,59,.035); }
-    .stat-label { display: block; color: var(--muted); font-size: .82rem; font-weight: 700; }
-    .stat-value { display: block; margin-top: 8px; font-size: clamp(1.28rem, 2.5vw, 1.8rem); font-weight: 850; letter-spacing: -.035em; line-height: 1.2; font-variant-numeric: tabular-nums; }
-    .stat-sub { display: block; margin-top: 8px; color: var(--muted); font-size: .78rem; }
-    .jumpnav { position: sticky; top: 0; z-index: 5; display: flex; gap: 7px; overflow-x: auto; margin: 0 0 26px; padding: 11px 0; background: rgba(246,244,237,.94); backdrop-filter: blur(10px); scrollbar-width: thin; }
-    .jumpnav a { flex: 0 0 auto; padding: 7px 13px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: var(--ink-2); font-size: .81rem; font-weight: 700; text-decoration: none; }
-    .jumpnav a:hover { border-color: var(--mint-strong); background: var(--mint); }
-    main { padding-bottom: 40px; }
-    section { scroll-margin-top: 76px; margin: 0 0 24px; padding: clamp(22px, 3.8vw, 34px); border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); box-shadow: var(--shadow); }
-    .section-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; margin-bottom: 20px; }
-    .section-kicker { margin: 0 0 3px; color: #9a7041; font-size: .76rem; font-weight: 850; letter-spacing: .1em; text-transform: uppercase; }
-    h2 { margin: 0; font-size: clamp(1.35rem, 3vw, 1.85rem); letter-spacing: -.025em; line-height: 1.25; }
-    h3 { margin: 0; font-size: 1.05rem; line-height: 1.35; }
-    .section-lead { max-width: 720px; margin: 9px 0 0; color: var(--muted); font-size: .92rem; }
-    .badge { display: inline-flex; align-items: center; align-self: flex-start; gap: 6px; padding: 5px 10px; border-radius: 999px; font-size: .74rem; font-weight: 800; white-space: nowrap; }
-    .badge.actual { background: var(--mint); color: #1b6152; }
-    .badge.estimate { background: var(--ochre-pale); color: #795820; }
-    .badge.pending { background: var(--coral-pale); color: #914630; }
-    .callout { padding: 15px 17px; border-left: 4px solid var(--ochre); border-radius: 0 14px 14px 0; background: #fbf6e9; color: #4b5142; font-size: .9rem; }
-    .callout strong { color: var(--ink); }
-    .fx-layout { display: grid; grid-template-columns: 1.05fr .95fr; gap: 18px; }
-    .fx-control, .fx-snapshots { padding: 20px; border: 1px solid var(--line); border-radius: 18px; background: #fbfcf7; }
-    .field-label { display: block; margin-bottom: 7px; color: var(--muted); font-size: .8rem; font-weight: 750; }
-    .input-row { display: flex; align-items: center; gap: 11px; }
-    .input-row input { width: min(210px, 60%); padding: 10px 12px; border: 1px solid #b9ccc3; border-radius: 11px; background: white; color: var(--ink); font-size: 1.2rem; font-weight: 780; font-variant-numeric: tabular-nums; }
-    .input-unit { color: var(--ink-2); font-size: .9rem; font-weight: 700; }
-    .rate-buttons { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 13px; }
-    .rate-buttons button { padding: 6px 10px; border: 1px solid #cbd8cf; border-radius: 999px; background: white; color: var(--ink-2); font-size: .78rem; cursor: pointer; }
-    .rate-buttons button:hover { border-color: var(--ink-2); background: var(--mint); }
-    .microcopy { margin: 9px 0 0; color: var(--muted); font-size: .78rem; }
-    .rate-list { display: grid; gap: 10px; margin-top: 12px; }
-    .rate-line { display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: baseline; padding-bottom: 9px; border-bottom: 1px solid var(--line); }
-    .rate-line:last-child { padding-bottom: 0; border-bottom: 0; }
-    .rate-kind { color: var(--muted); font-size: .8rem; }
-    .rate-value { font-weight: 820; font-variant-numeric: tabular-nums; }
-    .actual-grid, .week-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
-    .pay-card, .week-card { min-width: 0; padding: 18px; border: 1px solid var(--line); border-radius: 17px; background: #fff; }
-    .card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
-    .date-label { margin-top: 3px; color: var(--muted); font-size: .81rem; }
-    .pay-pairs { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; margin: 16px 0 13px; }
-    .pay-pair { padding: 11px 12px; border-radius: 12px; background: #f5f8f3; }
-    .pair-label { display: block; color: var(--muted); font-size: .73rem; }
-    .pair-value { display: block; margin-top: 3px; font-size: 1rem; font-weight: 830; font-variant-numeric: tabular-nums; }
-    .moneyline { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 12px; padding: 8px 0; border-top: 1px solid #edf0eb; }
-    .moneyline:first-of-type { border-top: 0; }
-    .money-label { color: var(--muted); font-size: .8rem; }
-    .money-value { font-weight: 780; font-variant-numeric: tabular-nums; text-align: right; }
-    .money-value small { display: block; color: #53706a; font-size: .77rem; font-weight: 700; }
-    .grand-total { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; margin-top: 15px; padding: 17px; border-radius: 16px; background: var(--ink); color: #fff; }
-    .total-cell span { display: block; color: #cadfd5; font-size: .78rem; }
-    .total-cell strong { display: block; margin-top: 3px; font-size: 1.18rem; font-variant-numeric: tabular-nums; }
-    .shift-list { display: grid; gap: 5px; margin: 14px 0; padding: 0; list-style: none; }
-    .shift-list li { display: grid; grid-template-columns: 53px 1fr; gap: 9px; color: var(--ink-2); font-size: .83rem; }
-    .shift-day { color: var(--muted); font-weight: 740; font-variant-numeric: tabular-nums; }
-    .week-metrics { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 8px; margin-top: 13px; }
-    .week-metric { padding: 9px 10px; border-radius: 11px; background: #f5f8f3; }
-    .week-metric span { display: block; color: var(--muted); font-size: .69rem; }
-    .week-metric strong { display: block; margin-top: 2px; font-size: .91rem; font-variant-numeric: tabular-nums; }
-    .week-money { margin-top: 10px; padding-top: 9px; border-top: 1px solid #edf0eb; }
-    .week-money .moneyline { padding: 5px 0; border-top: 0; }
-    .week-rationale { margin: 10px 0 0; color: var(--muted); font-size: .76rem; }
-    .average-banner { display: grid; grid-template-columns: 1fr 1fr auto; gap: 15px; align-items: center; margin: 16px 0; padding: 18px; border-radius: 17px; background: var(--mint); }
-    .average-banner .avg-number { display: block; font-size: 1.54rem; font-weight: 880; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
-    .average-banner .avg-label { display: block; color: #436761; font-size: .77rem; font-weight: 700; }
-    .average-banner .included { max-width: 170px; color: #436761; font-size: .75rem; text-align: right; }
-    .formula { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 15px 0; color: var(--ink-2); font-size: .88rem; }
-    .formula span { padding: 7px 10px; border-radius: 9px; background: #f3f6f0; font-variant-numeric: tabular-nums; }
-    .formula b { color: #9a7041; }
-    .monthly-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 15px; }
-    .subpanel { padding: 18px; border: 1px solid var(--line); border-radius: 16px; background: #fff; }
-    .subpanel h3 { margin-bottom: 9px; }
-    .cost-row { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; border-bottom: 1px solid #edf0eb; color: var(--ink-2); font-size: .86rem; }
-    .cost-row:last-child { border-bottom: 0; }
-    .cost-row strong { color: var(--ink); font-variant-numeric: tabular-nums; text-align: right; }
-    .scenario-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; margin-top: 14px; }
-    .scenario { padding: 18px; border: 1px solid var(--line); border-radius: 16px; background: #fff; }
-    .scenario h3 { margin-bottom: 3px; }
-    .scenario-sub { margin: 0 0 11px; color: var(--muted); font-size: .78rem; }
-    .scenario .moneyline:last-child { margin-top: 4px; border-top: 1px solid var(--line); }
-    .scenario .moneyline:last-child .money-label, .scenario .moneyline:last-child .money-value { color: #1b6152; font-weight: 850; }
-    .source-list { display: grid; gap: 11px; margin: 0; padding-left: 21px; color: var(--ink-2); font-size: .87rem; }
-    .source-list li::marker { color: #bc8c48; font-weight: 900; }
-    .footnote { margin: 14px 0 0; color: var(--muted); font-size: .78rem; }
-    footer { padding: 8px 0 36px; color: var(--muted); font-size: .77rem; }
-    .footer-box { padding: 17px 19px; border: 1px solid var(--line); border-radius: 15px; background: rgba(255,254,250,.65); }
-    .footer-box p { margin: 4px 0; }
-    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
-    @media (max-width: 850px) {
-      .stats { grid-template-columns: repeat(2,minmax(0,1fr)); }
-      .fx-layout, .monthly-grid { grid-template-columns: 1fr; }
-      .average-banner { grid-template-columns: 1fr 1fr; }
-      .average-banner .included { grid-column: 1 / -1; max-width: none; text-align: left; }
-    }
-    @media (max-width: 600px) {
-      .page { width: min(100% - 24px, 1120px); }
-      .topbar { padding-top: 13px; }
-      .hero { margin-top: 12px; padding: 25px 21px; border-radius: 23px; }
-      .hero::after { right: -185px; bottom: -235px; }
-      .hero-copy { font-size: .94rem; }
-      .stats { gap: 8px; }
-      .stat { min-height: 123px; padding: 14px; border-radius: 15px; }
-      .stat-value { font-size: 1.27rem; }
-      .stat-sub { font-size: .7rem; }
-      .jumpnav { margin-bottom: 15px; }
-      section { margin-bottom: 14px; padding: 20px 16px; border-radius: 19px; }
-      .section-head { display: block; }
-      .section-head > .badge { margin-top: 10px; }
-      .actual-grid, .week-grid, .scenario-grid { grid-template-columns: 1fr; }
-      .pay-card, .week-card { padding: 15px; }
-      .pay-pairs { gap: 8px; }
-      .grand-total { padding: 14px; }
-      .grand-total .total-cell strong { font-size: 1rem; }
-      .week-metrics { gap: 6px; }
-      .week-metric { padding: 8px; }
-      .week-metric span { font-size: .65rem; }
-      .week-metric strong { font-size: .83rem; }
-      .average-banner { gap: 10px; padding: 14px; }
-      .average-banner .avg-number { font-size: 1.28rem; }
-      .formula { gap: 5px; font-size: .8rem; }
-      .formula span { padding: 6px 8px; }
-      .input-row { align-items: flex-start; flex-direction: column; gap: 7px; }
-      .input-row input { width: 100%; }
+    @media (max-width: 390px) {
+      .quick-info { grid-template-columns: 1fr; }
+      .stat { grid-template-columns: 1fr; }
+      .stat-label { grid-column: 1; grid-row: 1; }
+      .stat-value { grid-column: 1; grid-row: 2; text-align: left; }
+      .stat-twd { grid-column: 1; grid-row: 3; margin-top: 0; text-align: left; white-space: normal; }
+      .stat-note { grid-column: 1; grid-row: 4; }
+      .summary-hint { max-width: 95px; }
     }
     @media print {
       body { background: white; }
-      .page { width: 100%; }
-      .jumpnav, .rate-buttons { display: none; }
-      .hero, section, .stat { box-shadow: none; break-inside: avoid; }
-      .hero { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      details.panel > summary::after { display: none; }
+      details.panel, details.week { break-inside: avoid; }
+      .hero, .stat { box-shadow: none; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
     }
   </style>
 </head>
 <body>
   <div class="page">
-    <header class="topbar">
-      <div class="brandline"><span class="brandmark" aria-hidden="true">NZ</span><span>Sunson · work &amp; pay summary</span></div>
-      <div class="hero">
-        <p class="eyebrow">紐西蘭打工度假｜資料基準 2026 年 10 月 9 日</p>
-        <h1>工作排班與收支整理</h1>
-        <p class="hero-copy">把 GoRoster 原始排班、薪資單期間實績，以及排班拆分和未來估算分開呈現。金額以紐幣為主；台幣只按指定日期的星展牌告快照換算。</p>
-        <div class="hero-note">
-          <span class="pill"><span class="pill-dot" aria-hidden="true"></span>薪資實績截至 10/9</span>
-          <span class="pill">第 8 週仍為預排班</span>
-          <span class="pill">姓名與薪資單個資未公開</span>
-        </div>
-      </div>
+    <header class="hero">
+      <p class="eyebrow">SUNSON · 紐西蘭打工度假</p>
+      <h1>工作收支</h1>
+      <p>先看已領薪資、一般月收入與可存金額。完整班表和計算依據收在下方。</p>
+      <div class="badges"><span class="badge">更新至 2026/10/9</span><span class="badge">後續班次未核實</span></div>
     </header>
 
-    <div class="stats" aria-label="重點摘要">
-      <article class="stat">
-        <span class="stat-label">四期稅前薪資實績</span>
-        <strong class="stat-value">NZ$4,324.80</strong>
-        <span class="stat-sub">按目前匯率約 <b data-nzd-convert="4324.80">NT$78,279</b></span>
-      </article>
-      <article class="stat">
-        <span class="stat-label">四期稅後實領</span>
-        <strong class="stat-value">NZ$3,625.12</strong>
-        <span class="stat-sub">按目前匯率約 <b data-nzd-convert="3625.12">NT$65,615</b></span>
-      </article>
-      <article class="stat">
-        <span class="stat-label">六週平均排班</span>
-        <strong class="stat-value">31.67 小時／週</strong>
-        <span class="stat-sub">排除第 1、5 週</span>
-      </article>
-      <article class="stat">
-        <span class="stat-label">六週平均計薪</span>
-        <strong class="stat-value">30.27 小時／週</strong>
-        <span class="stat-sub">其中第 8 週是預估工時</span>
-      </article>
-    </div>
-
-    <nav class="jumpnav" aria-label="頁面導覽">
-      <a href="#fx">匯率</a><a href="#payslips">雙週薪資</a><a href="#roster">八週排班</a><a href="#average">工時平均</a><a href="#monthly">月薪與生活費</a><a href="#refund">退稅與儲蓄</a><a href="#sources">資料與限制</a>
-    </nav>
-
     <main>
-      <section id="fx">
-        <div class="section-head">
-          <div>
-            <p class="section-kicker">Exchange reference</p>
-            <h2>星展 NZD／TWD 匯率快照</h2>
-            <p class="section-lead">換算欄位預設採 2026/10/9 11:50（台灣時間）記錄的賣出價。它是歷史牌告值，並非現在的即時匯率。</p>
-          </div>
-          <span class="badge estimate">歷史牌告 · 不是即時</span>
-        </div>
-        <div class="fx-layout">
-          <div class="fx-control">
-            <label class="field-label" for="fxRate">換算用賣出價（每 NZ$1 折合新臺幣）</label>
-            <div class="input-row">
-              <input id="fxRate" type="number" min="0.01" max="1000" step="0.01" value="18.10" inputmode="decimal" aria-describedby="fxHelp">
-              <span class="input-unit">TWD／NZD</span>
-            </div>
-            <div class="rate-buttons" aria-label="選擇記錄過的賣出價">
-              <button type="button" data-rate="18.07">10/9 05:40 · 18.07</button>
-              <button type="button" data-rate="18.10">10/9 11:50 · 18.10</button>
-            </div>
-            <p class="microcopy" id="fxHelp">目前選用 NZ$1 = NT$<span data-current-fx>18.10</span>。修改後只更新目前頁面顯示，不會儲存或同步。薪水實際入帳是 NZD；台幣是參考換算。</p>
-          </div>
-          <div class="fx-snapshots">
-            <h3>原對話記錄的牌告快照</h3>
-            <div class="rate-list">
-              <div class="rate-line"><span class="rate-kind">10/9 05:40（台灣時間）· 銀行買入<br><small>換回台幣時參考</small></span><strong class="rate-value">17.67</strong></div>
-              <div class="rate-line"><span class="rate-kind">10/9 05:40（台灣時間）· 銀行賣出</span><strong class="rate-value">18.07</strong></div>
-              <div class="rate-line"><span class="rate-kind">10/9 11:50（台灣時間）· 銀行賣出<br><small>後續月薪與退稅情境換算採用</small></span><strong class="rate-value">18.10</strong></div>
-            </div>
-            <p class="microcopy">換回台幣要看銀行「買入」價；買賣價差與匯款費用會影響實得金額。11:50 的買入牌告未提供。</p>
-          </div>
-        </div>
+      <section class="stats" aria-label="收支摘要">
+        <article class="stat">
+          <span class="stat-label">四期實領</span>
+          <strong class="stat-value">NZ$3,625.12</strong>
+          <span class="stat-twd" data-nzd-to-twd="3625.12">約 NT$65,615</span>
+          <span class="stat-note">稅前 NZ$4,324.80 · 扣繳 NZ$699.68</span>
+        </article>
+        <article class="stat">
+          <span class="stat-label">一般月領估值</span>
+          <strong class="stat-value">約 NZ$2,830.61</strong>
+          <span class="stat-twd" data-nzd-to-twd="2830.61">約 NT$51,234</span>
+          <span class="stat-note">以平均計薪時數推估</span>
+        </article>
+        <article class="stat">
+          <span class="stat-label">月可存估值</span>
+          <strong class="stat-value">約 NZ$1,487.28</strong>
+          <span class="stat-twd" data-nzd-to-twd="1487.28">約 NT$26,920</span>
+          <span class="stat-note">已扣固定生活費；未含退稅</span>
+        </article>
       </section>
 
-      <section id="payslips">
-        <div class="section-head">
-          <div>
-            <p class="section-kicker">Payroll record</p>
-            <h2>四期雙週薪資單實績</h2>
-            <p class="section-lead">以下採原對話中逐期整理的薪資單數字。8/28 為到職首筆，其後每兩週發薪。</p>
-          </div>
-          <span class="badge actual">期間合計已發薪</span>
-        </div>
-        <div class="actual-grid">
-          <article class="pay-card">
-            <div class="card-top"><div><h3>8 月 28 日發薪</h3><div class="date-label">計薪期間：8/20</div></div><span class="badge actual">實績</span></div>
-            <div class="pay-pairs"><div class="pay-pair"><span class="pair-label">原排班</span><strong class="pair-value">5.00 h</strong></div><div class="pay-pair"><span class="pair-label">薪資單計薪</span><strong class="pair-value">4.67 h</strong></div></div>
-            <div class="moneyline"><span class="money-label">稅前</span><span class="money-value">NZ$96.64<small data-nzd-convert="96.64">NT$1,749</small></span></div>
-            <div class="moneyline"><span class="money-label">PAYE</span><span class="money-value">−NZ$11.82</span></div>
-            <div class="moneyline"><span class="money-label">實領</span><span class="money-value">NZ$84.82<small data-nzd-convert="84.82">NT$1,535</small></span></div>
-          </article>
-          <article class="pay-card">
-            <div class="card-top"><div><h3>9 月 11 日發薪</h3><div class="date-label">計薪期間：8/24–9/6</div></div><span class="badge actual">實績</span></div>
-            <div class="pay-pairs"><div class="pay-pair"><span class="pair-label">原排班</span><strong class="pair-value">57.75 h</strong></div><div class="pay-pair"><span class="pair-label">薪資單計薪</span><strong class="pair-value">55.83 h</strong></div></div>
-            <div class="moneyline"><span class="money-label">稅前</span><span class="money-value">NZ$1,364.80<small data-nzd-convert="1364.80">NT$24,703</small></span></div>
-            <div class="moneyline"><span class="money-label">PAYE</span><span class="money-value">−NZ$220.70</span></div>
-            <div class="moneyline"><span class="money-label">實領</span><span class="money-value">NZ$1,144.10<small data-nzd-convert="1144.10">NT$20,708</small></span></div>
-          </article>
-          <article class="pay-card">
-            <div class="card-top"><div><h3>9 月 25 日發薪</h3><div class="date-label">計薪期間：9/7–9/20</div></div><span class="badge actual">實績</span></div>
-            <div class="pay-pairs"><div class="pay-pair"><span class="pair-label">原排班</span><strong class="pair-value">50.75 h</strong></div><div class="pay-pair"><span class="pair-label">薪資單計薪</span><strong class="pair-value">48.37 h</strong></div></div>
-            <div class="moneyline"><span class="money-label">稅前</span><span class="money-value">NZ$1,251.14<small data-nzd-convert="1251.14">NT$22,646</small></span></div>
-            <div class="moneyline"><span class="money-label">PAYE</span><span class="money-value">−NZ$198.82</span></div>
-            <div class="moneyline"><span class="money-label">實領</span><span class="money-value">NZ$1,052.32<small data-nzd-convert="1052.32">NT$19,047</small></span></div>
-          </article>
-          <article class="pay-card">
-            <div class="card-top"><div><h3>10 月 9 日發薪</h3><div class="date-label">計薪期間：9/21–10/4</div></div><span class="badge actual">實績</span></div>
-            <div class="pay-pairs"><div class="pay-pair"><span class="pair-label">原排班</span><strong class="pair-value">65.25 h</strong></div><div class="pay-pair"><span class="pair-label">薪資單計薪</span><strong class="pair-value">62.33 h</strong></div></div>
-            <div class="moneyline"><span class="money-label">稅前</span><span class="money-value">NZ$1,612.22<small data-nzd-convert="1612.22">NT$29,181</small></span></div>
-            <div class="moneyline"><span class="money-label">PAYE</span><span class="money-value">−NZ$268.34</span></div>
-            <div class="moneyline"><span class="money-label">實領</span><span class="money-value">NZ$1,343.88<small data-nzd-convert="1343.88">NT$24,324</small></span></div>
-          </article>
-        </div>
-        <div class="grand-total" aria-label="四期薪資累計">
-          <div class="total-cell"><span>稅前累計</span><strong>NZ$4,324.80 · <span data-nzd-convert="4324.80">NT$78,279</span></strong></div>
-          <div class="total-cell"><span>PAYE 扣除</span><strong>NZ$699.68</strong></div>
-          <div class="total-cell"><span>稅後實領累計</span><strong>NZ$3,625.12 · <span data-nzd-convert="3625.12">NT$65,615</span></strong></div>
-          <div class="total-cell"><span>合計計薪時數</span><strong>171.20 h</strong></div>
-        </div>
-        <div class="callout" style="margin-top:14px">
-          若把 NZ$3,625.12 實領紐幣換回台幣，應參考銀行買入牌告。以 10/9 05:40 的歷史買入價 17.67 試算約 <strong>NT$64,056</strong>，未扣任何費用；這不是 11:50 的即時兌換承諾。
-        </div>
-      </section>
-
-      <section id="roster">
-        <div class="section-head">
-          <div>
-            <p class="section-kicker">Roster source</p>
-            <h2>八週原始排班與計薪整理</h2>
-            <p class="section-lead">班次時段採紐西蘭當地時間，週期為週一至週日。GoRoster 時段表示排定工作，不單獨證明實際出勤；只有薪資單週期總時數列為實績。</p>
-          </div>
-          <span class="badge estimate">星期一至星期日</span>
-        </div>
-        <div class="callout" style="margin-bottom:15px">
-          <strong>怎麼看估算值：</strong>第 2–7 週沒有逐日薪資單時數，按同一雙週薪資單的「計薪總時數 ÷ 原排班總時數」比例拆分。週薪與單週計薪小時因此是估值，不代表逐日核薪。第 8 週的 32 小時計入平均，但截至 10/9 仍是預排推估；10/9 以後的班次未標記為已完成。
-        </div>
-        <div class="week-grid">
-          <article class="week-card">
-            <div class="card-top"><div><h3>第 1 週 · 8/17–8/23</h3><div class="date-label">剛到職，排班偏少</div></div><span class="badge actual">計薪有實績</span></div>
-            <ul class="shift-list"><li><span class="shift-day">8/20</span><span>10:00–15:00</span></li></ul>
-            <div class="week-metrics"><div class="week-metric"><span>原排班</span><strong>5.00 h</strong></div><div class="week-metric"><span>計薪時數</span><strong>4.67 h</strong></div><div class="week-metric"><span>工時狀態</span><strong>實薪單</strong></div></div>
-            <div class="week-money"><div class="moneyline"><span class="money-label">稅前實績</span><span class="money-value">NZ$96.64<small data-nzd-convert="96.64">NT$1,749</small></span></div><div class="moneyline"><span class="money-label">稅後實績</span><span class="money-value">NZ$84.82<small data-nzd-convert="84.82">NT$1,535</small></span></div></div>
-          </article>
-          <article class="week-card">
-            <div class="card-top"><div><h3>第 2 週 · 8/24–8/30</h3><div class="date-label">屬 9/11 雙週給薪期間</div></div><span class="badge estimate">週別拆分估算</span></div>
-            <ul class="shift-list"><li><span class="shift-day">8/27–28</span><span>10:00–18:00（各 1 班）</span></li><li><span class="shift-day">8/29</span><span>11:00–18:45</span></li><li><span class="shift-day">8/30</span><span>10:00–18:45</span></li></ul>
-            <div class="week-metrics"><div class="week-metric"><span>原排班</span><strong>32.50 h</strong></div><div class="week-metric"><span>計薪估值</span><strong>31.42 h</strong></div><div class="week-metric"><span>稅前估值</span><strong>NZ$733.39</strong></div></div>
-            <div class="week-money"><div class="moneyline"><span class="money-label">稅前估值</span><span class="money-value">NZ$733.39<small data-nzd-convert="733.39">NT$13,274</small></span></div><div class="moneyline"><span class="money-label">稅後估值</span><span class="money-value">NZ$614.79<small data-nzd-convert="614.79">NT$11,128</small></span></div></div>
-            <p class="week-rationale">依 9/11 薪資單 55.83 h，按本週排班占雙週排班比例拆分。</p>
-          </article>
-          <article class="week-card">
-            <div class="card-top"><div><h3>第 3 週 · 8/31–9/6</h3><div class="date-label">屬 9/11 雙週給薪期間</div></div><span class="badge estimate">週別拆分估算</span></div>
-            <ul class="shift-list"><li><span class="shift-day">9/4</span><span>11:00–18:45</span></li><li><span class="shift-day">9/5–6</span><span>10:00–18:45（各 1 班）</span></li></ul>
-            <div class="week-metrics"><div class="week-metric"><span>原排班</span><strong>25.25 h</strong></div><div class="week-metric"><span>計薪估值</span><strong>24.41 h</strong></div><div class="week-metric"><span>稅前估值</span><strong>NZ$631.41</strong></div></div>
-            <div class="week-money"><div class="moneyline"><span class="money-label">稅前估值</span><span class="money-value">NZ$631.41<small data-nzd-convert="631.41">NT$11,429</small></span></div><div class="moneyline"><span class="money-label">稅後估值</span><span class="money-value">NZ$529.31<small data-nzd-convert="529.31">NT$9,581</small></span></div></div>
-            <p class="week-rationale">依 9/11 薪資單 55.83 h，按本週排班占雙週排班比例拆分。</p>
-          </article>
-          <article class="week-card">
-            <div class="card-top"><div><h3>第 4 週 · 9/7–9/13</h3><div class="date-label">屬 9/25 雙週給薪期間</div></div><span class="badge estimate">週別拆分估算</span></div>
-            <ul class="shift-list"><li><span class="shift-day">9/7–8</span><span>11:00–18:45（各 1 班）</span></li><li><span class="shift-day">9/12–13</span><span>10:00–18:45（各 1 班）</span></li></ul>
-            <div class="week-metrics"><div class="week-metric"><span>原排班</span><strong>33.00 h</strong></div><div class="week-metric"><span>計薪估值</span><strong>31.45 h</strong></div><div class="week-metric"><span>稅前估值</span><strong>NZ$813.55</strong></div></div>
-            <div class="week-money"><div class="moneyline"><span class="money-label">稅前估值</span><span class="money-value">NZ$813.55<small data-nzd-convert="813.55">NT$14,725</small></span></div><div class="moneyline"><span class="money-label">稅後估值</span><span class="money-value">NZ$684.27<small data-nzd-convert="684.27">NT$12,385</small></span></div></div>
-            <p class="week-rationale">依 9/25 薪資單 48.37 h，按本週排班占雙週排班比例拆分。</p>
-          </article>
-          <article class="week-card">
-            <div class="card-top"><div><h3>第 5 週 · 9/14–9/20</h3><div class="date-label">排班時數偏少，平均中排除</div></div><span class="badge estimate">週別拆分估算</span></div>
-            <ul class="shift-list"><li><span class="shift-day">9/15、17</span><span>10:30–15:00（各 1 班）</span></li><li><span class="shift-day">9/20</span><span>10:00–18:45</span></li></ul>
-            <div class="week-metrics"><div class="week-metric"><span>原排班</span><strong>17.75 h</strong></div><div class="week-metric"><span>計薪估值</span><strong>16.92 h</strong></div><div class="week-metric"><span>稅前估值</span><strong>NZ$437.59</strong></div></div>
-            <div class="week-money"><div class="moneyline"><span class="money-label">稅前估值</span><span class="money-value">NZ$437.59<small data-nzd-convert="437.59">NT$7,920</small></span></div><div class="moneyline"><span class="money-label">稅後估值</span><span class="money-value">NZ$368.05<small data-nzd-convert="368.05">NT$6,662</small></span></div></div>
-            <p class="week-rationale">依 9/25 薪資單 48.37 h，按本週排班占雙週排班比例拆分。</p>
-          </article>
-          <article class="week-card">
-            <div class="card-top"><div><h3>第 6 週 · 9/21–9/27</h3><div class="date-label">屬 10/9 雙週給薪期間</div></div><span class="badge estimate">週別拆分估算</span></div>
-            <ul class="shift-list"><li><span class="shift-day">9/21</span><span>11:00–18:45</span></li><li><span class="shift-day">9/22、25</span><span>10:30–15:00（各 1 班）</span></li><li><span class="shift-day">9/26–27</span><span>10:00–18:45（各 1 班）</span></li></ul>
-            <div class="week-metrics"><div class="week-metric"><span>原排班</span><strong>34.25 h</strong></div><div class="week-metric"><span>計薪估值</span><strong>32.72 h</strong></div><div class="week-metric"><span>稅前估值</span><strong>NZ$846.26</strong></div></div>
-            <div class="week-money"><div class="moneyline"><span class="money-label">稅前估值</span><span class="money-value">NZ$846.26<small data-nzd-convert="846.26">NT$15,317</small></span></div><div class="moneyline"><span class="money-label">稅後估值</span><span class="money-value">NZ$705.41<small data-nzd-convert="705.41">NT$12,768</small></span></div></div>
-            <p class="week-rationale">依 10/9 薪資單 62.33 h，按本週排班占雙週排班比例拆分。</p>
-          </article>
-          <article class="week-card">
-            <div class="card-top"><div><h3>第 7 週 · 9/28–10/4</h3><div class="date-label">屬 10/9 雙週給薪期間</div></div><span class="badge estimate">週別拆分估算</span></div>
-            <ul class="shift-list"><li><span class="shift-day">9/29、10/1–2</span><span>10:30–15:00（各 1 班）</span></li><li><span class="shift-day">10/3–4</span><span>10:00–18:45（各 1 班）</span></li></ul>
-            <div class="week-metrics"><div class="week-metric"><span>原排班</span><strong>31.00 h</strong></div><div class="week-metric"><span>計薪估值</span><strong>29.61 h</strong></div><div class="week-metric"><span>稅前估值</span><strong>NZ$765.96</strong></div></div>
-            <div class="week-money"><div class="moneyline"><span class="money-label">稅前估值</span><span class="money-value">NZ$765.96<small data-nzd-convert="765.96">NT$13,864</small></span></div><div class="moneyline"><span class="money-label">稅後估值</span><span class="money-value">NZ$638.47<small data-nzd-convert="638.47">NT$11,556</small></span></div></div>
-            <p class="week-rationale">依 10/9 薪資單 62.33 h，按本週排班占雙週排班比例拆分。</p>
-          </article>
-          <article class="week-card">
-            <div class="card-top"><div><h3>第 8 週 · 10/5–10/11</h3><div class="date-label">10/9 以後班次沒有出勤證據</div></div><span class="badge pending">預排／未核實</span></div>
-            <ul class="shift-list"><li><span class="shift-day">10/8–9</span><span>10:30–18:45（各 1 班）</span></li><li><span class="shift-day">10/10–11</span><span>10:00–18:45（各 1 班）</span></li></ul>
-            <div class="week-metrics"><div class="week-metric"><span>原排班</span><strong>34.00 h</strong></div><div class="week-metric"><span>計薪估值</span><strong>約 32.00 h</strong></div><div class="week-metric"><span>稅前估值</span><strong>約 NZ$827.71</strong></div></div>
-            <div class="week-money"><div class="moneyline"><span class="money-label">稅前估值</span><span class="money-value">約 NZ$827.71<small data-nzd-convert="827.71">NT$14,982</small></span></div><div class="moneyline"><span class="money-label">稅後估值</span><span class="money-value">約 NZ$689.95<small data-nzd-convert="689.95">NT$12,488</small></span></div></div>
-            <p class="week-rationale">假設四個預排長班各扣 30 分鐘無薪休息；稅後按前一期扣稅比例推估。尚未核對實際出勤或薪資單。</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="average">
-        <div class="section-head">
-          <div>
-            <p class="section-kicker">Six-week baseline</p>
-            <h2>正常工作強度的平均基準</h2>
-            <p class="section-lead">依先前選擇，排除剛到職、時數偏低的第 1 週，以及排班偏少的第 5 週。</p>
-          </div>
-          <span class="badge estimate">含第 8 週預排估值</span>
-        </div>
-        <div class="average-banner">
-          <div><span class="avg-number">31.67 h／週</span><span class="avg-label">排班平均 · 190.00 h ÷ 6 週</span></div>
-          <div><span class="avg-number">30.27 h／週</span><span class="avg-label">計薪平均 · 181.61 h ÷ 6 週</span></div>
-          <div class="included">納入第 2、3、4、6、7、8 週<br>第 8 週為預排估值</div>
-        </div>
-        <div class="callout">第 2–7 週的週別計薪時數是以雙週薪資單總時數按班表比例拆分；第 8 週是排班推估。平均值適合做情境基準，不等同已發生的 6 週逐日工時紀錄。</div>
-      </section>
-
-      <section id="monthly">
-        <div class="section-head">
-          <div>
-            <p class="section-kicker">Monthly model</p>
-            <h2>正常月薪與生活成本</h2>
-            <p class="section-lead">以平均每週 30.27 個計薪小時換算完整月份，顯示模型估值而非每月保證收入。</p>
-          </div>
-          <span class="badge estimate">月薪估算</span>
-        </div>
-        <div class="callout" style="margin-bottom:14px">
-          <strong>記錄的薪資算法：</strong>累計前 20 個計薪小時按 NZ$19.16／小時，之後按 NZ$23.95／小時；兩者皆另加 8% 假期加給。這是沿用薪資單整理中的薪資做法，頁面不把它當成法律合規判斷。
-        </div>
-        <div class="formula" aria-label="月薪估算公式">
-          <span>30.27 h／週</span><b>×</b><span>52 ÷ 12</span><b>→</b><span>約 131.16 h／月</span><b>×</b><span>NZ$23.95</span><b>×</b><span>1.08</span>
-        </div>
-        <div class="monthly-grid">
-          <div class="subpanel">
-            <h3>平均完整月薪</h3>
-            <div class="moneyline"><span class="money-label">基本薪資</span><span class="money-value">NZ$3,141.39<small data-nzd-convert="3141.39">NT$56,859</small></span></div>
-            <div class="moneyline"><span class="money-label">8% 假期加給</span><span class="money-value">NZ$251.31<small data-nzd-convert="251.31">NT$4,549</small></span></div>
-            <div class="moneyline"><span class="money-label">稅前月薪</span><span class="money-value">NZ$3,392.70<small data-nzd-convert="3392.70">NT$61,408</small></span></div>
-            <div class="moneyline"><span class="money-label">預估 PAYE（含 ACC）</span><span class="money-value">−NZ$562.10<small data-nzd-convert="-562.10">−NT$10,174</small></span></div>
-            <div class="moneyline"><span class="money-label"><strong>稅後月薪估值</strong></span><span class="money-value"><strong>NZ$2,830.61</strong><small data-nzd-convert="2830.61">NT$51,234</small></span></div>
-          </div>
-          <div class="subpanel">
-            <h3>固定生活費（每週 → 月化）</h3>
-            <div class="cost-row"><span>房租 · NZ$120／週</span><strong>NZ$520.00／月<br><small data-nzd-convert="520">NT$9,412</small></strong></div>
-            <div class="cost-row"><span>油錢 · NZ$40／週</span><strong>NZ$173.33／月<br><small data-nzd-convert="173.33">NT$3,137</small></strong></div>
-            <div class="cost-row"><span>餐費 · NZ$150／週</span><strong>NZ$650.00／月<br><small data-nzd-convert="650">NT$11,765</small></strong></div>
-            <div class="cost-row"><span><strong>生活費合計</strong></span><strong>NZ$1,343.33／月<br><small data-nzd-convert="1343.33">NT$24,314</small></strong></div>
-            <div class="cost-row"><span><strong>扣生活費後可存</strong></span><strong>NZ$1,487.28／月<br><small data-nzd-convert="1487.28">NT$26,920</small></strong></div>
-          </div>
-        </div>
-        <p class="footnote">月化方式：每週金額 × 52 ÷ 12。稅後月薪沿用原對話的 2026/27 M 稅碼試算，實際 PAYE 會受稅碼、其他收入、雇主與薪資週期影響。</p>
-      </section>
-
-      <section id="refund">
-        <div class="section-head">
-          <div>
-            <p class="section-kicker">Tax &amp; savings scenarios</p>
-            <h2>退稅估值與攤回儲蓄情境</h2>
-            <p class="section-lead">約 NZ$497 是原對話的 2027 年退稅模型，不是已核定或已收到的款項。</p>
-          </div>
-          <span class="badge estimate">不確定估值</span>
-        </div>
-        <div class="monthly-grid">
-          <div class="subpanel">
-            <h3>先前退稅試算的組成</h3>
-            <div class="moneyline"><span class="money-label">模型全年應稅薪資</span><span class="money-value">約 NZ$20,587<small data-nzd-convert="20587">NT$372,625</small></span></div>
-            <div class="moneyline"><span class="money-label">模型全年預扣 PAYE</span><span class="money-value">約 NZ$3,368<small data-nzd-convert="3368">NT$60,961</small></span></div>
-            <div class="moneyline"><span class="money-label">估計所得稅＋ACC</span><span class="money-value">約 NZ$2,871<small data-nzd-convert="2871">NT$51,965</small></span></div>
-            <div class="moneyline"><span class="money-label"><strong>可能退稅</strong></span><span class="money-value"><strong>約 NZ$497</strong><small data-nzd-convert="497">NT$8,996</small></span></div>
-            <p class="footnote">原模型假設第一份工作至 11/19、第二份接續至 2/19、第三份自 3/15 起，並延用目前工時與薪資條件。跨雇主薪資、實際週期、全年總收入和利息都可能改變結算結果。</p>
-          </div>
-          <div class="subpanel">
-            <h3>月薪基準（不含一次性退稅）</h3>
-            <div class="moneyline"><span class="money-label">稅後月薪估值</span><span class="money-value">NZ$2,830.61<small data-nzd-convert="2830.61">NT$51,234</small></span></div>
-            <div class="moneyline"><span class="money-label">扣除固定生活費</span><span class="money-value">−NZ$1,343.33<small data-nzd-convert="-1343.33">−NT$24,314</small></span></div>
-            <div class="moneyline"><span class="money-label"><strong>一般月可存</strong></span><span class="money-value"><strong>NZ$1,487.28</strong><small data-nzd-convert="1487.28">NT$26,920</small></span></div>
-          </div>
-        </div>
-        <div class="scenario-grid">
-          <article class="scenario">
-            <h3>退稅攤回 6 個月</h3>
-            <p class="scenario-sub">比較一段 6 個完整工作月；退稅本身仍是一筆收入。</p>
-            <div class="moneyline"><span class="money-label">每月攤回約 NZ$497 ÷ 6</span><span class="money-value">+NZ$82.83<small data-nzd-convert="82.833333">NT$1,499</small></span></div>
-            <div class="moneyline"><span class="money-label">含退稅月均實領估值</span><span class="money-value">NZ$2,913.44<small data-nzd-convert="2913.443333">NT$52,733</small></span></div>
-            <div class="moneyline"><span class="money-label">扣生活費後月均可存</span><span class="money-value">NZ$1,570.11<small data-nzd-convert="1570.11">NT$28,419</small></span></div>
-          </article>
-          <article class="scenario">
-            <h3>退稅攤回 9 個月</h3>
-            <p class="scenario-sub">延長比較期間；未包括 2027/28 稅年日後可能結算的款項。</p>
-            <div class="moneyline"><span class="money-label">每月攤回約 NZ$497 ÷ 9</span><span class="money-value">+NZ$55.22<small data-nzd-convert="55.222222">NT$1,000</small></span></div>
-            <div class="moneyline"><span class="money-label">含退稅月均實領估值</span><span class="money-value">NZ$2,885.83<small data-nzd-convert="2885.832222">NT$52,234</small></span></div>
-            <div class="moneyline"><span class="money-label">扣生活費後月均可存</span><span class="money-value">NZ$1,542.50<small data-nzd-convert="1542.50">NT$27,919</small></span></div>
-          </article>
-        </div>
-        <div class="callout" style="margin-top:14px">退稅平攤只用來比較平均收支，不代表每月實際會多領這筆錢；實際結算應以 Inland Revenue（IRD）年終結果為準。</div>
-      </section>
-
-      <section id="sources">
-        <div class="section-head">
-          <div>
-            <p class="section-kicker">Sources &amp; limits</p>
-            <h2>資料基準、來源與使用限制</h2>
-            <p class="section-lead">這是一份截至 2026/10/9 的人工整理快照，不會自動讀取後續班表、薪資單或匯率。</p>
-          </div>
-        </div>
-        <ul class="source-list">
-          <li><strong>班表與薪資：</strong>依參照對話中整理的 GoRoster 八週排班及四期 iPayroll 薪資單摘要。本次取得的參照內容未附原始薪資單 PDF，所以各期金額沒有在此重新對照原檔。</li>
-          <li><strong>計薪時數：</strong>只有四期雙週合計列為薪資單實績。單週拆分、休息扣時原因及第 8 週薪資都是估算／未核實；頁面不推定任何 10/9 以後班次已出勤。</li>
-          <li><strong>稅率參考：</strong><a href="https://www.ird.govt.nz/income-tax/income-tax-for-individuals/tax-codes-and-tax-rates-for-individuals/about-tax-codes" target="_blank" rel="noopener noreferrer">IRD 個人稅碼、PAYE 與 ACC earners' levy 說明</a>。2026/27 ACC earners' levy 為 1.75%；個人退稅仍取決於實際全年收入、稅碼、雇主及其他應稅收入。</li>
-          <li><strong>匯率：</strong>18.07、17.67 與 18.10 為原對話記錄的 2026/10/9 星展牌告快照，未在本頁即時連線更新。頁面預設 18.10 為賣出價計算比較用台幣，不等於實際換匯成交價。</li>
-          <li><strong>免費託管：</strong><a href="https://docs.github.com/en/get-started/learning-about-github/githubs-plans" target="_blank" rel="noopener noreferrer">GitHub Free 個人方案包含公開儲存庫的 GitHub Pages</a>；<a href="https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits" target="_blank" rel="noopener noreferrer">Pages 使用限制與服務條款</a>。網站沒有設定到期日，持續提供仍取決於 GitHub 服務政策、帳號與儲存庫狀態。</li>
-          <li><strong>隱私：</strong>頁面不列員工姓名，不包含銀行帳號、住址、稅號、薪資單影像或聯絡方式；不使用分析追蹤或表單。網址可公開存取，搜尋引擎不索引標籤不是存取控制。</li>
-        </ul>
-        <p class="footnote">金額為紐幣（NZD）；台幣（TWD）換算四捨五入至整數。頁面內容用於個人收支整理，不取代雇主逐日工時紀錄、正式薪資單或 IRD 個別結算。</p>
-      </section>
-    </main>
-
-    <footer>
-      <div class="footer-box">
-        <p><strong>更新基準：2026 年 10 月 9 日</strong> · 收入實績截至 10 月 9 日發薪（計薪至 10 月 4 日）。</p>
-        <p>公開靜態頁面；目前匯率欄位只在你的瀏覽器頁面中換算，不會上傳任何輸入。</p>
+      <div class="ratebar">
+        <label for="fxRate">台幣換算</label>
+        <span class="rate-input"><span>NZ$1 = NT$</span><input id="fxRate" type="number" min="0.01" max="1000" step="0.01" value="18.10" inputmode="decimal" aria-describedby="fxHelp"></span>
+        <small id="fxHelp">星展賣出價 · 2026/10/9 11:50（台灣時間）。歷史參考，非即時匯率；換回台幣請看銀行買入價。</small>
       </div>
-    </footer>
+
+      <section class="quick-info" aria-label="工時與生活費">
+        <article class="quick-card">
+          <h2>六週平均工時</h2>
+          <div class="quick-value"><strong>31.67 h</strong><span>排班／週</span><strong>30.27 h</strong><span>計薪／週</span></div>
+          <p class="quick-note">含第 8 週預排估值；第 1、5 週不列入。</p>
+        </article>
+        <article class="quick-card">
+          <h2>固定生活費</h2>
+          <div class="quick-value"><strong>NZ$310／週</strong></div>
+          <p class="quick-note">房租、油錢與餐費。</p>
+        </article>
+      </section>
+
+      <section class="refund" aria-labelledby="refund-title">
+        <div class="refund-head"><h2 id="refund-title">2027 退稅估值</h2><strong class="refund-total">約 NZ$497</strong></div>
+        <div class="scenario-line"><span>攤 6 個月：月存約 <b>NZ$1,570</b></span><span>攤 9 個月：月存約 <b>NZ$1,543</b></span></div>
+        <p>退稅是一次性估值，平攤只供比較，不代表每月實領。</p>
+      </section>
+
+      <details class="panel">
+        <summary><span>查看發薪與班表</span><span class="summary-hint">四期薪資 · 八週排班</span></summary>
+        <div class="panel-body">
+          <h2>雙週薪資實績</h2>
+          <p class="intro">單期時數為薪資單總數；各週拆分只作估算。</p>
+          <div class="pays">
+            <article class="pay"><div class="pay-top"><strong>8/28 發薪</strong><span>8/20</span></div><div class="pay-grid"><div class="pay-cell"><small>計薪</small><b>4.67 h</b></div><div class="pay-cell"><small>稅前</small><b>NZ$96.64</b></div><div class="pay-cell"><small>實領</small><b>NZ$84.82</b></div></div><div class="quick-note">PAYE NZ$11.82</div></article>
+            <article class="pay"><div class="pay-top"><strong>9/11 發薪</strong><span>8/24–9/6</span></div><div class="pay-grid"><div class="pay-cell"><small>計薪</small><b>55.83 h</b></div><div class="pay-cell"><small>稅前</small><b>NZ$1,364.80</b></div><div class="pay-cell"><small>實領</small><b>NZ$1,144.10</b></div></div><div class="quick-note">PAYE NZ$220.70</div></article>
+            <article class="pay"><div class="pay-top"><strong>9/25 發薪</strong><span>9/7–9/20</span></div><div class="pay-grid"><div class="pay-cell"><small>計薪</small><b>48.37 h</b></div><div class="pay-cell"><small>稅前</small><b>NZ$1,251.14</b></div><div class="pay-cell"><small>實領</small><b>NZ$1,052.32</b></div></div><div class="quick-note">PAYE NZ$198.82</div></article>
+            <article class="pay"><div class="pay-top"><strong>10/9 發薪</strong><span>9/21–10/4</span></div><div class="pay-grid"><div class="pay-cell"><small>計薪</small><b>62.33 h</b></div><div class="pay-cell"><small>稅前</small><b>NZ$1,612.22</b></div><div class="pay-cell"><small>實領</small><b>NZ$1,343.88</b></div></div><div class="quick-note">PAYE NZ$268.34</div></article>
+          </div>
+          <h2>每週原始排班</h2>
+          <p class="intro">班次時間為紐西蘭當地時間。點開週次查看日期與時段。</p>
+          <div class="week-list">
+            <details class="week"><summary><span class="week-name">第 1 週 · 8/17–8/23</span><span class="week-hours">排班 5.00 h · 計薪 4.67 h</span><span class="status actual">薪資單</span></summary><div class="week-detail"><p>8/20　10:00–15:00。第 1 週為到職週，平均時數計算時排除。</p></div></details>
+            <details class="week"><summary><span class="week-name">第 2 週 · 8/24–8/30</span><span class="week-hours">排班 32.50 h · 計薪約 31.42 h</span><span class="status">拆分估算</span></summary><div class="week-detail"><p>8/27、28　10:00–18:00；8/29　11:00–18:45；8/30　10:00–18:45。</p></div></details>
+            <details class="week"><summary><span class="week-name">第 3 週 · 8/31–9/6</span><span class="week-hours">排班 25.25 h · 計薪約 24.41 h</span><span class="status">拆分估算</span></summary><div class="week-detail"><p>9/4　11:00–18:45；9/5、6　10:00–18:45。</p></div></details>
+            <details class="week"><summary><span class="week-name">第 4 週 · 9/7–9/13</span><span class="week-hours">排班 33.00 h · 計薪約 31.45 h</span><span class="status">拆分估算</span></summary><div class="week-detail"><p>9/7、8　11:00–18:45；9/12、13　10:00–18:45。</p></div></details>
+            <details class="week"><summary><span class="week-name">第 5 週 · 9/14–9/20</span><span class="week-hours">排班 17.75 h · 計薪約 16.92 h</span><span class="status">拆分估算</span></summary><div class="week-detail"><p>9/15、17　10:30–15:00；9/20　10:00–18:45。因排班偏少，平均時數計算時排除。</p></div></details>
+            <details class="week"><summary><span class="week-name">第 6 週 · 9/21–9/27</span><span class="week-hours">排班 34.25 h · 計薪約 32.72 h</span><span class="status">拆分估算</span></summary><div class="week-detail"><p>9/21　11:00–18:45；9/22、25　10:30–15:00；9/26、27　10:00–18:45。</p></div></details>
+            <details class="week"><summary><span class="week-name">第 7 週 · 9/28–10/4</span><span class="week-hours">排班 31.00 h · 計薪約 29.61 h</span><span class="status">拆分估算</span></summary><div class="week-detail"><p>9/29、10/1、2　10:30–15:00；10/3、4　10:00–18:45。</p></div></details>
+            <details class="week"><summary><span class="week-name">第 8 週 · 10/5–10/11</span><span class="week-hours">排班 34.00 h · 計薪約 32.00 h</span><span class="status pending">預排估算</span></summary><div class="week-detail"><p>10/8、9　10:30–18:45；10/10、11　10:00–18:45。按每班扣 30 分鐘休息估算；出勤與薪資待確認，10/10、11 尚未發生，不列入實績。</p></div></details>
+          </div>
+          <p class="intro" style="margin-top:12px">平均採第 2、3、4、6、7、8 週：排班共 190.00 h，計薪估值共 181.61 h。第 2–7 週以雙週薪資單時數按排班比例拆分；第 8 週仍是預排估值。</p>
+        </div>
+      </details>
+
+      <details class="panel">
+        <summary><span>查看計算方式與來源</span><span class="summary-hint">匯率 · 薪資 · 退稅</span></summary>
+        <div class="panel-body">
+          <h2>薪資與生活費</h2>
+          <ul class="assumptions">
+            <li>原薪資整理記錄：累計前 20 個計薪小時 NZ$19.16／小時，其後 NZ$23.95／小時；另加 8% 假期加給。</li>
+            <li>月薪以每週 30.27 個計薪小時換算；平均稅前約 NZ$3,392.70，預估 PAYE（含 ACC）約 NZ$562.10。</li>
+            <li>生活費每週 NZ$310：房租 $120、油錢 $40、餐費 $150。月化以每週金額 × 52 ÷ 12。</li>
+          </ul>
+          <h2>退稅模型</h2>
+          <ul class="assumptions">
+            <li>原模型估 2026/27 應稅薪資 NZ$20,587、預扣 PAYE NZ$3,368、所得稅加 ACC 約 NZ$2,871，差額約 NZ$497。</li>
+            <li>工作日期假設：第一份至 11/19、第二份至 2/19、第三份 3/15 起；沿用目前工時與薪資。全年收入、稅碼、利息及實際發薪週期會改變結果。</li>
+          </ul>
+          <h2>匯率與資料限制</h2>
+          <ul class="assumptions">
+            <li>預設賣出價 18.10：2026/10/9 11:50（台灣時間）；同日 05:40 記錄為買入 17.67、賣出 18.07。均為歷史牌告值。</li>
+            <li>四期薪資數字沿用原對話的薪資單彙整；原始 PDF 未附在本次可讀取內容，沒有重新核對原檔。單週拆分與第 8 週都是估值。</li>
+            <li>2026/27 ACC earners' levy 為 1.75%；最終稅務結果依 IRD 個人資料與年終結算為準。<a href="https://www.ird.govt.nz/income-tax/income-tax-for-individuals/acc-clients-and-carers/acc-earners-levy-rates" target="_blank" rel="noopener noreferrer">IRD ACC levy 費率</a></li>
+            <li>本頁公開但不列姓名，沒有銀行帳號、住址、稅號、聯絡方式或薪資單影像；不收集輸入、不使用分析追蹤。</li>
+          </ul>
+          <p class="source-links"><a href="https://docs.github.com/en/get-started/learning-about-github/githubs-plans" target="_blank" rel="noopener noreferrer">GitHub Free 方案</a>支援公開儲存庫的 Pages。網站沒有預設下架日，持續提供依 GitHub 政策與帳號狀態而定。</p>
+        </div>
+      </details>
+    </main>
+    <footer>資料截至 2026 年 10 月 9 日 · 紐幣為收入與估算基準 · 台幣為歷史匯率參考</footer>
   </div>
   <script>
     (() => {
-      const rateInput = document.getElementById('fxRate');
-      const numberFormat = new Intl.NumberFormat('zh-TW', { maximumFractionDigits: 0 });
-      const rateFormat = new Intl.NumberFormat('zh-TW', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-      function updateConversions() {
-        const rate = Number(rateInput.value);
+      const input = document.getElementById('fxRate');
+      const format = new Intl.NumberFormat('zh-TW', { maximumFractionDigits: 0 });
+      function updateTwd() {
+        const rate = Number(input.value);
         if (!Number.isFinite(rate) || rate <= 0) return;
-        document.querySelectorAll('[data-nzd-convert]').forEach((node) => {
-          const nzd = Number(node.dataset.nzdConvert);
-          if (!Number.isFinite(nzd)) return;
-          const sign = nzd < 0 ? '−' : '';
-          node.textContent = `${sign}NT$${numberFormat.format(Math.round(Math.abs(nzd) * rate))}`;
-        });
-        document.querySelectorAll('[data-current-fx]').forEach((node) => {
-          node.textContent = rateFormat.format(rate);
+        document.querySelectorAll('[data-nzd-to-twd]').forEach((node) => {
+          const amount = Number(node.dataset.nzdToTwd);
+          if (Number.isFinite(amount)) node.textContent = '約 NT$' + format.format(Math.round(amount * rate));
         });
       }
-      rateInput.addEventListener('input', updateConversions);
-      document.querySelectorAll('[data-rate]').forEach((button) => {
-        button.addEventListener('click', () => {
-          rateInput.value = button.dataset.rate;
-          updateConversions();
-          rateInput.focus();
-        });
-      });
-      updateConversions();
+      input.addEventListener('input', updateTwd);
+      updateTwd();
     })();
   </script>
 </body>
