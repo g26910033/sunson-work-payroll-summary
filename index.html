@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#133c3b">
   <meta name="robots" content="noindex,nofollow">
-  <meta name="description" content="Sunson 紐西蘭工作排班、薪資與收支摘要。資料基準：2026 年 10 月 9 日。">
+  <meta name="description" content="Sunson 紐西蘭工作排班與薪資收支摘要。薪資實績截至 2026 年 10 月 9 日，班表更新至 10 月 11 日。">
   <title>Sunson 工作收支｜紐西蘭打工度假</title>
   <style>
     :root {
@@ -74,6 +74,24 @@
     .intro { margin: 0 0 12px; color: var(--muted); font-size: .82rem; }
     .pays { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 9px; }
     .pay { padding: 12px; border: 1px solid #e6ebe4; border-radius: 13px; background: #fff; }
+    .shifts { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 8px; }
+    .shift { padding: 10px 11px; border: 1px solid #e6ebe4; border-radius: 12px; background: #fff; }
+    .shift strong, .shift span { display: block; }
+    .shift strong { font-size: .85rem; font-variant-numeric: tabular-nums; }
+    .shift span { margin-top: 2px; color: var(--muted); font-size: .75rem; }
+    .publish-list { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 7px; }
+    .publish-item { display: flex; min-width: 0; justify-content: space-between; gap: 8px; padding: 9px 11px; border: 1px solid #e6ebe4; border-radius: 11px; background: #fff; font-size: .77rem; }
+    .publish-item strong { white-space: nowrap; }
+    .publish-item span { color: var(--muted); text-align: right; }
+    .planned-payments { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px; }
+    .planned-pay { padding: 11px; border: 1px solid #e6ebe4; border-radius: 12px; background: #fff; }
+    .planned-pay-head { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
+    .planned-pay-head strong { font-size: .86rem; }
+    .planned-pay-head span { color: var(--muted); font-size: .71rem; text-align: right; }
+    .planned-values { display: flex; justify-content: space-between; gap: 8px; margin-top: 8px; padding-top: 7px; border-top: 1px solid #edf0eb; }
+    .planned-values span { display: block; color: var(--muted); font-size: .68rem; }
+    .planned-values b { display: block; color: var(--ink); font-size: .83rem; font-variant-numeric: tabular-nums; }
+    .plan-note { margin: 9px 0 0; color: var(--muted); font-size: .75rem; }
     .pay-top { display: flex; justify-content: space-between; gap: 8px; margin-bottom: 7px; }
     .pay-top strong { font-size: .88rem; }
     .pay-top span { color: var(--muted); font-size: .72rem; text-align: right; }
@@ -113,6 +131,9 @@
       .quick-value { gap: 3px 7px; }
       .quick-value strong { font-size: 1.14rem; }
       .pays { grid-template-columns: 1fr; }
+      .shifts { grid-template-columns: 1fr; }
+      .publish-list { grid-template-columns: 1fr; }
+      .planned-payments { grid-template-columns: 1fr; }
       .pay-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
       .pay-cell:last-child { grid-column: 1 / -1; }
       details.panel > summary { padding: 14px; }
@@ -129,6 +150,12 @@
       .stat-twd { grid-column: 1; grid-row: 3; margin-top: 0; text-align: left; white-space: normal; }
       .stat-note { grid-column: 1; grid-row: 4; }
       .summary-hint { max-width: 95px; }
+      .plan-hint { max-width: 132px; }
+      .publish-item { display: grid; grid-template-columns: minmax(0,1fr); gap: 2px; justify-content: start; }
+      .publish-item strong { white-space: normal; }
+      .publish-item span { text-align: left; }
+      .planned-pay-head { align-items: flex-start; flex-direction: column; gap: 2px; }
+      .planned-pay-head span { text-align: left; }
     }
     @media print {
       body { background: white; }
@@ -143,8 +170,8 @@
     <header class="hero">
       <p class="eyebrow">SUNSON · 紐西蘭打工度假</p>
       <h1>工作收支</h1>
-      <p>先看已領薪資、一般月收入與可存金額。完整班表和計算依據收在下方。</p>
-      <div class="badges"><span class="badge">更新至 2026/10/9</span><span class="badge">後續班次未核實</span></div>
+      <p>先看已領薪資、一般月收入與可存金額。最新班表及後續發薪規劃收在下方。</p>
+      <div class="badges"><span class="badge">薪資實績至 2026/10/9</span><span class="badge">班表更新至 2026/10/11</span></div>
     </header>
 
     <main>
@@ -195,7 +222,41 @@
       </section>
 
       <details class="panel">
-        <summary><span>查看發薪與班表</span><span class="summary-hint">四期薪資 · 八週排班</span></summary>
+        <summary><span>班表與發薪至 11/19</span><span class="summary-hint plan-hint">10/23 · 預估 NZ$1,217</span></summary>
+        <div class="panel-body">
+          <h2>已公布班表 · 10/12–10/18</h2>
+          <p class="intro">信箱通知於 10/11 公布；以下是預定班次，尚非出勤實績。</p>
+          <div class="shifts">
+            <article class="shift"><strong>10/16（五）</strong><span>10:30–18:45 · Cashier 1</span></article>
+            <article class="shift"><strong>10/17（六）</strong><span>10:00–18:45 · Cashier 1</span></article>
+            <article class="shift"><strong>10/18（日）</strong><span>10:00–18:45 · Cashier 1</span></article>
+          </div>
+          <p class="plan-note">合計排班 25.75 小時；計薪暫估 24.25 小時（假設每班有 30 分鐘無薪休息）。</p>
+
+          <h2>預計公布班表</h2>
+          <div class="publish-list">
+            <div class="publish-item"><strong>10/17（六）–18（日）</strong><span>10/19–25 班表</span></div>
+            <div class="publish-item"><strong>10/24（六）–25（日）</strong><span>10/26–11/1 班表</span></div>
+            <div class="publish-item"><strong>10/31（六）–11/1（日）</strong><span>11/2–8 班表</span></div>
+            <div class="publish-item"><strong>11/7（六）–8（日）</strong><span>11/9–15 班表</span></div>
+            <div class="publish-item"><strong>11/14（六）–15（日）</strong><span>11/16–22 班表；上班至 11/19</span></div>
+          </div>
+          <p class="plan-note">以上為依每週六、日公布的安排推估；實際公告日期可能變動。</p>
+
+          <h2>雙週週五發薪估值</h2>
+          <p class="intro">依 10/9 實際發薪日起每 14 天推算；日期與金額皆為預估。</p>
+          <div class="planned-payments">
+            <article class="planned-pay"><div class="planned-pay-head"><strong>10/23（五）</strong><span>10/5–18</span></div><div class="planned-values"><span>稅前<b>NZ$1,455</b></span><span>實領<b>NZ$1,217</b></span></div></article>
+            <article class="planned-pay"><div class="planned-pay-head"><strong>11/6（五）</strong><span>10/19–11/1</span></div><div class="planned-values"><span>稅前<b>NZ$1,566</b></span><span>實領<b>NZ$1,306</b></span></div></article>
+            <article class="planned-pay"><div class="planned-pay-head"><strong>11/20（五）</strong><span>11/2–15</span></div><div class="planned-values"><span>稅前<b>NZ$1,566</b></span><span>實領<b>NZ$1,306</b></span></div></article>
+            <article class="planned-pay"><div class="planned-pay-head"><strong>12/4（五）</strong><span>末期估至 11/19</span></div><div class="planned-values"><span>稅前<b>NZ$447</b></span><span>實領<b>NZ$393</b></span></div></article>
+          </div>
+          <p class="plan-note">本估值沿用薪資級距：前 20 個計薪小時 NZ$19.16/h，其後 NZ$23.95/h，另加 8% 假期加給；後續時數採後者。PAYE 依 M 稅碼及 ACC 推算，金額取整至元。10/23 以 10/5–11 預估 32 小時＋10/12–18 預估 24.25 小時計；11/6、11/20 按每週平均計薪 30.27 小時；12/4 僅估至 11/19。實際班表、扣繳及末期調整可能不同。</p>
+        </div>
+      </details>
+
+      <details class="panel">
+        <summary><span>查看薪資實績與歷史班表</span><span class="summary-hint">四期薪資 · 八週排班</span></summary>
         <div class="panel-body">
           <h2>雙週薪資實績</h2>
           <p class="intro">單期時數為薪資單總數；各週拆分只作估算。</p>
@@ -240,13 +301,14 @@
             <li>預設賣出價 18.10：2026/10/9 11:50（台灣時間）；同日 05:40 記錄為買入 17.67、賣出 18.07。均為歷史牌告值。</li>
             <li>四期薪資數字沿用原對話的薪資單彙整；原始 PDF 未附在本次可讀取內容，沒有重新核對原檔。單週拆分與第 8 週都是估值。</li>
             <li>2026/27 ACC earners' levy 為 1.75%；最終稅務結果依 IRD 個人資料與年終結算為準。<a href="https://www.ird.govt.nz/income-tax/income-tax-for-individuals/acc-clients-and-carers/acc-earners-levy-rates" target="_blank" rel="noopener noreferrer">IRD ACC levy 費率</a></li>
+            <li>未來 PAYE 試算依 2026/27 所得稅級距及 ACC 費率估算：<a href="https://www.ird.govt.nz/income-tax/income-tax-for-individuals/tax-codes-and-tax-rates-for-individuals/tax-rates-for-individuals" target="_blank" rel="noopener noreferrer">IRD 個人所得稅率</a>、<a href="https://www.ird.govt.nz/acclevy" target="_blank" rel="noopener noreferrer">ACC levy</a>。</li>
             <li>本頁公開但不列姓名，沒有銀行帳號、住址、稅號、聯絡方式或薪資單影像；不收集輸入、不使用分析追蹤。</li>
           </ul>
           <p class="source-links"><a href="https://docs.github.com/en/get-started/learning-about-github/githubs-plans" target="_blank" rel="noopener noreferrer">GitHub Free 方案</a>支援公開儲存庫的 Pages。網站沒有預設下架日，持續提供依 GitHub 政策與帳號狀態而定。</p>
         </div>
       </details>
     </main>
-    <footer>資料截至 2026 年 10 月 9 日 · 紐幣為收入與估算基準 · 台幣為歷史匯率參考</footer>
+    <footer>薪資實績截至 2026 年 10 月 9 日 · 班表更新至 10 月 11 日 · 台幣為歷史匯率參考</footer>
   </div>
   <script>
     (() => {
