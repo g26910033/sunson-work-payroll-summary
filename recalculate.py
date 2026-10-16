@@ -169,8 +169,8 @@ for w in weeks:
     for s in w['shifts']:
         groups.setdefault((s['start'], s['end']), []).append(md(day(s['date'])))
     times = '；'.join('、'.join(dates) + '　' + begin + '–' + end for (begin, end), dates in groups.items()) + '。'
-    status = '薪資單' if any(s['weeks'] == [n] for s in data['payslips']) else '拆分估算' if n in covered_numbers else '班表估算' if start > asof else '待發薪核對'
-    css = 'actual' if status == '薪資單' else 'pending' if n not in covered_numbers else ''
+    status = '薪資單' if any(s['weeks'] == [n] for s in data['payslips']) else '拆分估算' if n in covered_numbers else '已公布班表' if start + timedelta(days=6) > asof else '待發薪核對'
+    css = 'actual' if status == '薪資單' else 'pending' if status == '待發薪核對' else ''
     note = f'第 {n} 週不列入平均。' if n in data['excluded_weeks'] else ''
     if n not in covered_numbers:
         note += '按預設無薪休息估計，待薪資單核對。'

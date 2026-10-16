@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-11",
-  "latest_roster_published": "2026-10-11",
+  "updated": "2026-10-16",
+  "latest_roster_published": "2026-10-16",
   "excluded_weeks": [
     1,
     5
@@ -242,6 +242,24 @@
           "start": "10:00",
           "end": "18:45",
           "role": "Cashier 1"
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "start": "2026-10-19",
+      "shifts": [
+        {
+          "date": "2026-10-21",
+          "start": "09:15",
+          "end": "18:45",
+          "role": "Cashier 1"
+        },
+        {
+          "date": "2026-10-24",
+          "start": "11:00",
+          "end": "16:00",
+          "role": "Storeman 2"
         }
       ]
     }
