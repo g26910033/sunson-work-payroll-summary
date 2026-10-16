@@ -177,16 +177,16 @@
     <main>
       <!-- model:stats:start -->
 <section class="stats" aria-label="收支摘要">
-  <article class="stat"><span class="stat-label">四期實領</span><strong class="stat-value">NZ$3,625.12</strong><span class="stat-twd"><span data-nzd-to-twd="3625.12">約 NT$65,615</span></span><span class="stat-note">稅前 NZ$4,324.80 · 扣繳 NZ$699.68</span></article>
-  <article class="stat"><span class="stat-label">一般月薪估值</span><strong class="stat-value">稅前 NZ$2,943<br>稅後 NZ$2,467</strong><span class="stat-twd">稅後 <span data-nzd-to-twd="2467.17">約 NT$44,656</span></span><span class="stat-note">以最新九週平均推估；未含退稅</span></article>
-  <article class="stat"><span class="stat-label">月可存估值</span><strong class="stat-value">約 NZ$1,124</strong><span class="stat-twd"><span data-nzd-to-twd="1123.84">約 NT$20,342</span></span><span class="stat-note">已扣固定生活費；未含退稅</span></article>
+  <article class="stat"><span class="stat-label">四期實領</span><strong class="stat-value">NZ$3,625.12</strong><span class="stat-twd"><span data-nzd-to-twd="3625.12">約 NT$67,065</span></span><span class="stat-note">稅前 NZ$4,324.80 · 扣繳 NZ$699.68</span></article>
+  <article class="stat"><span class="stat-label">一般月薪估值</span><strong class="stat-value">稅前 NZ$2,943<br>稅後 NZ$2,467</strong><span class="stat-twd">稅後 <span data-nzd-to-twd="2467.17">約 NT$45,643</span></span><span class="stat-note">以最新九週平均推估；未含退稅</span></article>
+  <article class="stat"><span class="stat-label">月可存估值</span><strong class="stat-value">約 NZ$1,124</strong><span class="stat-twd"><span data-nzd-to-twd="1123.84">約 NT$20,791</span></span><span class="stat-note">已扣固定生活費；未含退稅</span></article>
 </section>
 <!-- model:stats:end -->
 
       <div class="ratebar">
         <label for="fxRate">台幣換算</label>
-        <span class="rate-input"><span>NZ$1 = NT$</span><input id="fxRate" type="number" min="0.01" max="1000" step="0.01" value="18.10" inputmode="decimal" aria-describedby="fxHelp"></span>
-        <small id="fxHelp">星展即期賣出 · 2026/10/9 11:50（台灣時間）。歷史參考，非即時匯率；換回台幣請看銀行買入價。</small>
+        <span class="rate-input"><span>NZ$1 = NT$</span><input id="fxRate" type="number" min="0.01" max="1000" step="0.01" value="18.50" inputmode="decimal" aria-describedby="fxHelp"></span>
+        <small id="fxHelp">星展即期賣出 · 2026/10/16 20:20（台灣時間）；即期買入 18.15。牌告快照，非自動即時更新；換回台幣請看買入價。</small>
       </div>
 
       <!-- model:quick-info:start -->
@@ -199,7 +199,7 @@
       <!-- model:refund:start -->
 <section class="refund" aria-labelledby="refund-title">
   <div class="refund-head"><h2 id="refund-title">2027 退稅預估</h2><strong class="refund-total">約 NZ$470</strong></div>
-  <p><span data-nzd-to-twd="469.99">約 NT$8,507</span> · 已依最新九週平均重算</p>
+  <p><span data-nzd-to-twd="469.99">約 NT$8,695</span> · 已依最新九週平均重算</p>
   <div class="scenario-line"><span>攤 6 個月：月存約 <b>NZ$1,202</b></span><span>攤 9 個月：月存約 <b>NZ$1,176</b></span></div>
   <p>沿用後續工作日期與雙週給薪假設；實際薪期仍待確認。退稅是一次性收入。</p>
 </section>
@@ -261,7 +261,9 @@
 <!-- model:refund-method:end -->
           <h2>匯率與資料限制</h2>
           <ul class="assumptions">
-            <li>預設賣出價 18.10：2026/10/9 11:50（台灣時間）；同日 05:40 記錄為買入 17.67、賣出 18.07。均為歷史牌告值。</li>
+            <!-- model:fx-method:start -->
+<li>預設依星展即期賣出 18.50 換算；同時點買入 18.15。牌告時間：2026/10/16 20:20（台灣時間）。<a href="https://www.dbs.com.tw/personal-zh/rates/foreign-exchange-rates.page" target="_blank" rel="noopener noreferrer">星展牌告來源</a>。此為查詢快照，非自動即時更新；紐幣換回台幣請看銀行買入價，交易以銀行實際報價為準。</li>
+<!-- model:fx-method:end -->
             <li>薪資實績沿用既有薪資單彙整，未重新核對原始 PDF；單週拆分與未領薪週計薪皆為估值。</li>
             <li>2026/27 ACC earners' levy 為 1.75%；最終稅務結果依 IRD 個人資料與年終結算為準。<a href="https://www.ird.govt.nz/income-tax/income-tax-for-individuals/acc-clients-and-carers/acc-earners-levy-rates" target="_blank" rel="noopener noreferrer">IRD ACC levy 費率</a></li>
             <li>未來 PAYE 試算依 2026/27 所得稅級距及 ACC 費率估算：<a href="https://www.ird.govt.nz/income-tax/income-tax-for-individuals/tax-codes-and-tax-rates-for-individuals/tax-rates-for-individuals" target="_blank" rel="noopener noreferrer">IRD 個人所得稅率</a>、<a href="https://www.ird.govt.nz/acclevy" target="_blank" rel="noopener noreferrer">ACC levy</a>。</li>
@@ -271,7 +273,7 @@
         </div>
       </details>
     </main>
-    <footer>薪資實績截至 2026/10/09 · 班表及全部估值更新至 2026/10/16 · 台幣為歷史匯率參考</footer>
+    <footer>薪資實績截至 2026/10/09 · 班表及全部估值更新至 2026/10/16 · 台幣按標示牌告換算</footer>
   </div>
   <script>
     (() => {

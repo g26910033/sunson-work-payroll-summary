@@ -22,9 +22,11 @@
     "food": "150"
   },
   "fx": {
-    "rate": "18.10",
+    "rate": "18.50",
     "source": "星展即期賣出",
-    "quoted_at": "2026/10/9 11:50（台灣時間）"
+    "quoted_at": "2026/10/16 20:20（台灣時間）",
+    "buy_rate": "18.15",
+    "source_url": "https://www.dbs.com.tw/personal-zh/rates/foreign-exchange-rates.page"
   },
   "weeks": [
     {
