@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-16",
+  "updated": "2026-10-23",
   "latest_roster_published": "2026-10-16",
   "excluded_weeks": [
     1
@@ -22,10 +22,10 @@
     "food": "150"
   },
   "fx": {
-    "rate": "18.50",
-    "source": "星展即期賣出",
-    "quoted_at": "2026/10/16 20:20（台灣時間）",
-    "buy_rate": "18.15",
+    "source": "星展",
+    "buy_rate": "18.34",
+    "sell_rate": "18.73",
+    "quoted_at": "2026/10/23 11:50（台灣時間）",
     "source_url": "https://www.dbs.com.tw/personal-zh/rates/foreign-exchange-rates.page"
   },
   "weeks": [
@@ -316,8 +316,28 @@
       "gross": "1612.22",
       "paye": "268.34",
       "net": "1343.88"
+    },
+    {
+      "pay_date": "2026-10-23",
+      "period_start": "2026-10-05",
+      "period_end": "2026-10-18",
+      "weeks": [
+        8,
+        9
+      ],
+      "hours": "58.92",
+      "gross": "1524.02",
+      "paye": "251.36",
+      "net": "1272.66"
     }
   ],
+  "tax_summary": {
+    "as_of": "2026-10-23",
+    "taxable_earnings": "5848.82",
+    "total_deductions": "951.04",
+    "acc_earners_levy": "102.34",
+    "income_tax_deductions": "848.70"
+  },
   "jobs": [
     {
       "label": "Sunson",

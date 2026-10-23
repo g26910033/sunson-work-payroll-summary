@@ -16,7 +16,7 @@ span = lambda a, b: md(a) + ('–' + md(b) if a != b else '')
 weekday = lambda value: '一二三四五六日'[value.weekday()]
 number = lambda n: {1:'一',2:'二',3:'三',4:'四',5:'五',6:'六',7:'七',8:'八',9:'九',10:'十'}.get(n, str(n))
 asof = day(data['updated'])
-fx = D(data['fx']['rate'])
+fx = D(data['fx']['buy_rate'])
 rate = D(data['hourly_rate']) * (1 + D(data['holiday_rate']))
 cost = sum(D(v) for v in data['weekly_costs'].values())
 cycle = data['pay_cycle_days']
@@ -66,6 +66,19 @@ for slip in data['payslips']:
     group = sum(scheduled[n] for n in slip['weeks'])
     for n in slip['weeks']:
         paid[n] = D(slip['hours']) * scheduled[n] / group
+tax_summary = data.get('tax_summary')
+if tax_summary:
+    sunson_slips = [s for s in data['payslips'] if s.get('job', 'Sunson') == 'Sunson']
+    checks = {
+        'taxable_earnings': sum(D(s['gross']) for s in sunson_slips),
+        'total_deductions': sum(D(s['paye']) for s in sunson_slips),
+        'income_tax_deductions': D(tax_summary['total_deductions']) - D(tax_summary['acc_earners_levy']),
+    }
+    for key in ['taxable_earnings', 'total_deductions']:
+        if checks[key] != D(tax_summary[key]):
+            raise ValueError(f'稅務摘要與 Sunson 薪資單的 {key} 不一致')
+    if checks['income_tax_deductions'] != D(tax_summary['income_tax_deductions']):
+        raise ValueError('稅務摘要中的扣繳與 ACC 拆分不一致')
 included = [w for w in weeks if w['number'] not in data['excluded_weeks']]
 count = len(included)
 scheduled_total = sum(scheduled[w['number']] for w in included)
@@ -111,6 +124,7 @@ paydays = [p for p in future if p['job_index'] == 0]
 
 
 def twd(amount):
+    amount = D(amount).quantize(D('.01'), rounding=ROUND_HALF_UP)
     return f'<span data-nzd-to-twd="{fmt(amount, 2).replace(",", "")}">約 NT${fmt(amount * fx)}</span>'
 
 
@@ -189,7 +203,8 @@ blocks['refund-method'] = f'''<h2>退稅模型</h2><ul class="assumptions">
 <li>攤 6 個月：每月加 NZ${fmt(refund / 6, 2)}，含退稅月領 NZ${fmt(scenarios[6]['net'], 2)}、月存 NZ${fmt(scenarios[6]['saving'], 2)}。攤 9 個月：每月加 NZ${fmt(refund / 9, 2)}，月領 NZ${fmt(scenarios[9]['net'], 2)}、月存 NZ${fmt(scenarios[9]['saving'], 2)}。月領均為稅後加一次性退稅平攤，稅前月薪不變；9 個月情境未含 2028 年退稅，不代表各月實際入帳。</li>
 <li>本模型僅包含已列的紐西蘭薪資，未納入利息、其他收入及抵免；不是 IRD 結算結果。<a href="https://www.ird.govt.nz/income-tax-assessments" target="_blank" rel="noopener noreferrer">IRD 年度結算</a>。</li></ul>'''
 
-blocks['fx-method'] = f'''<li>預設依星展即期賣出 {escape(data['fx']['rate'])} 換算；同時點買入 {escape(data['fx']['buy_rate'])}。牌告時間：{escape(data['fx']['quoted_at'])}。<a href="{escape(data['fx']['source_url'], quote=True)}" target="_blank" rel="noopener noreferrer">星展牌告來源</a>。此為查詢快照，非自動即時更新；紐幣換回台幣請看銀行買入價，交易以銀行實際報價為準。</li>'''
+blocks['actual-source'] = f'''<li>截至 {escape(tax_summary['as_of'].replace('-', '/'))} 的稅務摘要與薪資單合計一致：應稅 NZ${fmt(D(tax_summary['taxable_earnings']), 2)}、PAYE／扣繳 NZ${fmt(D(tax_summary['total_deductions']), 2)}（含 ACC NZ${fmt(D(tax_summary['acc_earners_levy']), 2)}；扣除 ACC 後 NZ${fmt(D(tax_summary['income_tax_deductions']), 2)}）。歷史週拆分及未領薪週工時為估值。</li>''' if tax_summary else ''
+blocks['fx-method'] = f'''<li>紐幣收入、存款與退稅換回台幣，依星展即期買入 {escape(data['fx']['buy_rate'])} 換算；同一牌告即期賣出 {escape(data['fx']['sell_rate'])}。牌告時間：{escape(data['fx']['quoted_at'])}。<a href="{escape(data['fx']['source_url'], quote=True)}" target="_blank" rel="noopener noreferrer">星展牌告來源</a>。此為查詢快照，非自動即時更新；實際交易以當時牌告為準。</li>'''
 
 source = (ROOT / 'index.html').read_text()
 for name, content in blocks.items():
@@ -198,11 +213,12 @@ for name, content in blocks.items():
     if matches != 1:
         raise ValueError(f'{name} 區塊標記數量不正確；不寫入網頁')
 source = re.sub(r'(<span class="summary-hint plan-hint">).*?(</span>)', lambda m: m[1] + ((md(paydays[0]['date']) + ' · 稅後約 NZ$' + fmt(paydays[0]['net'])) if paydays else '待確認末期結算') + m[2], source)
+source = re.sub(r'依 \d{1,2}/\d{1,2} 實際發薪日起每 14 天推算', f'依 {md(day(last_slip["pay_date"]))} 實際發薪日起每 14 天推算', source)
 source = re.sub(r'[一二三四五六七八九十0-9]+期薪資 · [^<]*週排班', f'{number(len(data["payslips"]))}期薪資 · {number(len(weeks))}週排班', source)
 source = re.sub(r'<div class="badges">.*?</div>', f'<div class="badges"><span class="badge">薪資實績至 {last_slip["pay_date"].replace("-", "/")}</span><span class="badge">班表更新至 {data["updated"].replace("-", "/")}</span></div>', source)
 source = re.sub(r'<footer>.*?</footer>', f'<footer>薪資實績截至 {last_slip["pay_date"].replace("-", "/")} · 班表及全部估值更新至 {data["updated"].replace("-", "/")} · 台幣按標示牌告換算</footer>', source)
-source = re.sub(r'(id="fxRate"[^>]*value=")[^"]+', lambda m: m[1] + data['fx']['rate'], source)
-source = re.sub(r'(<small id="fxHelp">).*?(</small>)', lambda m: m[1] + escape(data['fx']['source'] + ' · ' + data['fx']['quoted_at'] + '；即期買入 ' + data['fx']['buy_rate']) + '。牌告快照，非自動即時更新；換回台幣請看買入價。' + m[2], source)
+source = re.sub(r'(id="fxRate"[^>]*value=")[^"]+', lambda m: m[1] + data['fx']['buy_rate'], source)
+source = re.sub(r'(<small id="fxHelp">).*?(</small>)', lambda m: m[1] + escape('星展即期買入（紐幣換回台幣） · ' + data['fx']['quoted_at'] + '；即期賣出 ' + data['fx']['sell_rate'] + '。牌告快照，非自動即時更新。') + m[2], source)
 source = re.sub(r'(<meta name="description" content=")[^"]+', lambda m: m[1] + 'Sunson 紐西蘭工作排班與薪資收支摘要。薪資實績截至 ' + last_slip['pay_date'].replace('-', '/') + '，班表及全部估值更新至 ' + data['updated'].replace('-', '/') + '。', source)
 source = source.replace('有效日数', '有效日數').replace('双週', '雙週')
 (ROOT / 'index.html').write_text(source)
