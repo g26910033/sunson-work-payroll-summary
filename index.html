@@ -3,295 +3,111 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#133c3b">
+  <meta name="theme-color" content="#214b40">
   <meta name="robots" content="noindex,nofollow">
-  <meta name="description" content="Sunson 紐西蘭工作排班與薪資收支摘要。薪資實績截至 2026/10/23，班表及全部估值更新至 2026/10/23。">
-  <title>Sunson 工作收支｜紐西蘭打工度假</title>
-  <style>
-    :root {
-      --ink: #153d3b;
-      --muted: #607773;
-      --paper: #f5f4ed;
-      --card: #fffefa;
-      --line: #dce4dc;
-      --mint: #e1eee6;
-      --gold: #e7bd68;
-      --soft-gold: #fbf3df;
-      --soft-red: #f8e8df;
-      --shadow: 0 10px 28px rgba(21, 61, 59, .07);
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      color: var(--ink);
-      background: var(--paper);
-      font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
-    }
-    a { color: #17625d; text-underline-offset: 3px; }
-    a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visible { outline: 3px solid #c88046; outline-offset: 3px; }
-    .page { width: min(calc(100% - 32px), 920px); margin: 0 auto; }
-    .hero { margin: 20px 0 14px; padding: clamp(24px, 5vw, 40px); border-radius: 25px; color: #f7f8f1; background: linear-gradient(120deg, #133c3b, #286358); box-shadow: var(--shadow); }
-    .eyebrow { margin: 0 0 5px; color: #efd38d; font-size: .8rem; font-weight: 800; letter-spacing: .08em; }
-    h1 { margin: 0; font-size: clamp(2rem, 6vw, 3rem); line-height: 1.12; letter-spacing: -.04em; }
-    .hero p:last-child { max-width: 610px; margin: 11px 0 0; color: #e0ebe3; font-size: .94rem; }
-    .badges { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 16px; }
-    .badge { display: inline-flex; align-items: center; min-height: 27px; padding: 3px 10px; border: 1px solid rgba(255,255,255,.25); border-radius: 999px; color: #f7f8f1; font-size: .75rem; font-weight: 730; }
-    .stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 11px; margin: 0 0 12px; }
-    .stat { min-width: 0; padding: 16px; border: 1px solid var(--line); border-radius: 18px; background: var(--card); box-shadow: 0 5px 18px rgba(21,61,59,.035); }
-    .stat-label { display: block; color: var(--muted); font-size: .78rem; font-weight: 750; }
-    .stat-value { display: block; margin-top: 5px; font-size: clamp(1.2rem, 3vw, 1.65rem); font-weight: 870; letter-spacing: -.035em; line-height: 1.25; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
-    .stat-twd { display: block; margin-top: 5px; color: #37655d; font-size: .81rem; font-weight: 740; font-variant-numeric: tabular-nums; }
-    .stat-note { display: block; margin-top: 5px; color: var(--muted); font-size: .72rem; }
-    .ratebar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 18px; margin-bottom: 13px; padding: 12px 15px; border: 1px solid var(--line); border-radius: 15px; background: rgba(255,254,250,.8); }
-    .ratebar label { color: var(--ink); font-size: .83rem; font-weight: 800; }
-    .rate-input { display: inline-flex; align-items: center; gap: 7px; }
-    .rate-input input { width: 83px; padding: 5px 7px; border: 1px solid #b8cbc1; border-radius: 8px; background: white; color: var(--ink); font-size: .94rem; font-weight: 780; font-variant-numeric: tabular-nums; }
-    .ratebar small { flex: 1 1 290px; color: var(--muted); font-size: .74rem; }
-    .quick-info { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; margin-bottom: 13px; }
-    .quick-card { padding: 15px 17px; border: 1px solid var(--line); border-radius: 17px; background: var(--card); }
-    .quick-card h2 { margin: 0 0 4px; font-size: .87rem; }
-    .quick-value { display: flex; flex-wrap: wrap; gap: 7px 13px; align-items: baseline; font-weight: 820; font-variant-numeric: tabular-nums; }
-    .quick-value strong { font-size: 1.32rem; letter-spacing: -.025em; }
-    .quick-value span { color: var(--muted); font-size: .82rem; }
-    .quick-note { margin: 5px 0 0; color: var(--muted); font-size: .75rem; }
-    .refund { margin: 0 0 13px; padding: 18px; border: 1px solid #ecd9aa; border-radius: 18px; background: var(--soft-gold); }
-    .refund-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 5px 14px; }
-    .refund h2 { margin: 0; font-size: 1rem; }
-    .refund-total { font-size: 1.24rem; font-weight: 850; font-variant-numeric: tabular-nums; }
-    .scenario-line { display: flex; flex-wrap: wrap; gap: 6px 19px; margin-top: 9px; color: #604e29; font-size: .84rem; }
-    .scenario-line b { color: var(--ink); font-variant-numeric: tabular-nums; }
-    .refund p { margin: 8px 0 0; color: #6f633f; font-size: .74rem; }
-    details.panel { margin: 0 0 11px; border: 1px solid var(--line); border-radius: 17px; background: var(--card); box-shadow: 0 5px 18px rgba(21,61,59,.025); }
-    details.panel > summary { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 18px; cursor: pointer; font-weight: 820; list-style: none; }
-    details.panel > summary::-webkit-details-marker, details.week > summary::-webkit-details-marker { display: none; }
-    details.panel > summary::after { flex: 0 0 auto; width: 24px; height: 24px; border-radius: 50%; background: var(--mint); color: var(--ink); content: "+"; text-align: center; line-height: 24px; }
-    details.panel[open] > summary::after { content: "−"; }
-    .summary-hint { margin-left: auto; color: var(--muted); font-size: .75rem; font-weight: 600; text-align: right; }
-    .panel-body { padding: 0 18px 18px; }
-    .panel-body h2 { margin: 14px 0 8px; font-size: 1rem; }
-    .panel-body h2:first-child { margin-top: 0; }
-    .intro { margin: 0 0 12px; color: var(--muted); font-size: .82rem; }
-    .pays { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 9px; }
-    .pay { padding: 12px; border: 1px solid #e6ebe4; border-radius: 13px; background: #fff; }
-    .shifts { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 8px; }
-    .shift { padding: 10px 11px; border: 1px solid #e6ebe4; border-radius: 12px; background: #fff; }
-    .shift strong, .shift span { display: block; }
-    .shift strong { font-size: .85rem; font-variant-numeric: tabular-nums; }
-    .shift span { margin-top: 2px; color: var(--muted); font-size: .75rem; }
-    .publish-list { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 7px; }
-    .publish-item { display: flex; min-width: 0; justify-content: space-between; gap: 8px; padding: 9px 11px; border: 1px solid #e6ebe4; border-radius: 11px; background: #fff; font-size: .77rem; }
-    .publish-item strong { white-space: nowrap; }
-    .publish-item span { color: var(--muted); text-align: right; }
-    .planned-payments { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px; }
-    .planned-pay { padding: 11px; border: 1px solid #e6ebe4; border-radius: 12px; background: #fff; }
-    .planned-pay-head { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
-    .planned-pay-head strong { font-size: .86rem; }
-    .planned-pay-head span { color: var(--muted); font-size: .71rem; text-align: right; }
-    .planned-values { display: flex; justify-content: space-between; gap: 8px; margin-top: 8px; padding-top: 7px; border-top: 1px solid #edf0eb; }
-    .planned-values span { display: block; color: var(--muted); font-size: .68rem; }
-    .planned-values b { display: block; color: var(--ink); font-size: .83rem; font-variant-numeric: tabular-nums; }
-    .plan-note { margin: 9px 0 0; color: var(--muted); font-size: .75rem; }
-    .pay-top { display: flex; justify-content: space-between; gap: 8px; margin-bottom: 7px; }
-    .pay-top strong { font-size: .88rem; }
-    .pay-top span { color: var(--muted); font-size: .72rem; text-align: right; }
-    .pay-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 5px; }
-    .pay-cell { padding: 6px 7px; border-radius: 8px; background: #f5f8f3; }
-    .pay-cell small { display: block; color: var(--muted); font-size: .66rem; }
-    .pay-cell b { display: block; margin-top: 1px; font-size: .78rem; font-variant-numeric: tabular-nums; }
-    .week-list { display: grid; gap: 6px; }
-    details.week { border: 1px solid #e6ebe4; border-radius: 12px; background: #fff; }
-    details.week > summary { display: grid; grid-template-columns: minmax(115px, .8fr) minmax(0,1.5fr) auto; gap: 8px; align-items: center; padding: 10px 12px; cursor: pointer; list-style: none; }
-    .week-name { font-size: .82rem; font-weight: 800; }
-    .week-hours { color: var(--ink-2, #365b58); font-size: .78rem; font-variant-numeric: tabular-nums; }
-    .status { padding: 3px 7px; border-radius: 999px; background: var(--soft-gold); color: #76571c; font-size: .66rem; font-weight: 760; text-align: center; white-space: nowrap; }
-    .status.actual { background: var(--mint); color: #24624f; }
-    .status.pending { background: var(--soft-red); color: #904b35; }
-    .week-detail { padding: 0 12px 10px; color: var(--muted); font-size: .77rem; }
-    .week-detail p { margin: 0; }
-    .cost-line { display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; border-bottom: 1px solid #edf0eb; font-size: .82rem; }
-    .cost-line:last-child { border-bottom: 0; }
-    .cost-line span { color: var(--muted); }
-    .cost-line strong { text-align: right; font-variant-numeric: tabular-nums; }
-    .assumptions { display: grid; gap: 7px; margin: 0; padding-left: 18px; color: #435c57; font-size: .81rem; }
-    .assumptions li::marker { color: #a57d3e; }
-    .source-links { margin-top: 12px; color: var(--muted); font-size: .78rem; }
-    footer { padding: 5px 0 30px; color: var(--muted); font-size: .74rem; text-align: center; }
-    @media (max-width: 680px) {
-      .page { width: min(calc(100% - 22px), 920px); }
-      .hero { margin-top: 11px; padding: 22px 19px; border-radius: 20px; }
-      .stats { grid-template-columns: 1fr; gap: 7px; }
-      .stat { display: grid; grid-template-columns: 1fr auto; align-items: baseline; gap: 2px 8px; padding: 11px 13px; border-radius: 14px; }
-      .stat-label { grid-column: 1; grid-row: 1; }
-      .stat-value { grid-column: 2; grid-row: 1; margin: 0; font-size: 1.2rem; text-align: right; }
-      .stat-twd { grid-column: 1 / -1; grid-row: 2; margin-top: 1px; font-size: .73rem; }
-      .stat-note { grid-column: 1 / -1; margin-top: 4px; }
-      .quick-info { gap: 7px; }
-      .quick-card { padding: 12px; }
-      .quick-value { gap: 3px 7px; }
-      .quick-value strong { font-size: 1.14rem; }
-      .pays { grid-template-columns: 1fr; }
-      .shifts { grid-template-columns: 1fr; }
-      .publish-list { grid-template-columns: 1fr; }
-      .planned-payments { grid-template-columns: 1fr; }
-      .pay-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
-      .pay-cell:last-child { grid-column: 1 / -1; }
-      details.panel > summary { padding: 14px; }
-      .panel-body { padding: 0 13px 14px; }
-      details.week > summary { grid-template-columns: 1fr auto; gap: 4px 8px; }
-      .week-hours { grid-column: 1; grid-row: 2; }
-      .status { grid-column: 2; grid-row: 1 / span 2; }
-    }
-    @media (max-width: 390px) {
-      .quick-info { grid-template-columns: 1fr; }
-      .stat { grid-template-columns: 1fr; }
-      .stat-label { grid-column: 1; grid-row: 1; }
-      .stat-value { grid-column: 1; grid-row: 2; text-align: left; }
-      .stat-twd { grid-column: 1; grid-row: 3; margin-top: 0; text-align: left; white-space: normal; }
-      .stat-note { grid-column: 1; grid-row: 4; }
-      .summary-hint { max-width: 95px; }
-      .plan-hint { max-width: 132px; }
-      .publish-item { display: grid; grid-template-columns: minmax(0,1fr); gap: 2px; justify-content: start; }
-      .publish-item strong { white-space: normal; }
-      .publish-item span { text-align: left; }
-      .planned-pay-head { align-items: flex-start; flex-direction: column; gap: 2px; }
-      .planned-pay-head span { text-align: left; }
-    }
-    @media print {
-      body { background: white; }
-      details.panel > summary::after { display: none; }
-      details.panel, details.week { break-inside: avoid; }
-      .hero, .stat { box-shadow: none; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
-    }
-  </style>
+  <meta name="description" content="Sunson 工作排班、實際薪資與紐西蘭退稅情境。資料更新 2026/10/23，明確標示實績、班表與估算。">
+  <link rel="canonical" href="https://gpt.greenparty.org.tw/sunson-work-payroll-summary/">
+  <link rel="stylesheet" href="site.css?v=20261023-review">
+  <script src="site.js?v=20261023-review" defer></script>
+  <title>Sunson 工作收支｜薪資與退稅</title>
 </head>
 <body>
-  <div class="page">
-    <header class="hero">
-      <p class="eyebrow">SUNSON · 紐西蘭打工度假</p>
-      <h1>工作收支</h1>
-      <p>先看已領薪資、一般月收入與可存金額。最新班表及後續發薪規劃收在下方。</p>
-      <div class="badges"><span class="badge">薪資實績至 2026/10/23</span><span class="badge">班表更新至 2026/10/23</span></div>
-    </header>
-
-    <main>
-      <!-- model:stats:start -->
-<section class="stats" aria-label="收支摘要">
-  <article class="stat"><span class="stat-label">五期實領</span><strong class="stat-value">NZ$4,897.78</strong><span class="stat-twd"><span data-nzd-to-twd="4897.78">約 NT$89,825</span></span><span class="stat-note">稅前 NZ$5,848.82 · 扣繳 NZ$951.04</span></article>
-  <article class="stat"><span class="stat-label">一般月薪估值</span><strong class="stat-value">稅前 NZ$2,976<br>稅後 NZ$2,494</strong><span class="stat-twd">稅後 <span data-nzd-to-twd="2494.03">約 NT$45,741</span></span><span class="stat-note">以最新九週平均推估；未含退稅</span></article>
-  <article class="stat"><span class="stat-label">月可存估值</span><strong class="stat-value">約 NZ$1,151</strong><span class="stat-twd"><span data-nzd-to-twd="1150.69">約 NT$21,104</span></span><span class="stat-note">已扣固定生活費；未含退稅</span></article>
-</section>
-<!-- model:stats:end -->
-
-      <div class="ratebar">
-        <label for="fxRate">台幣換算</label>
-        <span class="rate-input"><span>NZ$1 = NT$</span><input id="fxRate" type="number" min="0.01" max="1000" step="0.01" value="18.34" inputmode="decimal" aria-describedby="fxHelp"></span>
-        <small id="fxHelp">星展即期買入（紐幣換回台幣） · 2026/10/23 11:50（台灣時間）；即期賣出 18.73。牌告快照，非自動即時更新。</small>
-      </div>
-
-      <!-- model:quick-info:start -->
-<section class="quick-info" aria-label="工時與生活費">
-  <article class="quick-card"><h2>九週平均工時</h2><div class="quick-value"><strong>27.56 h</strong><span>排班／週</span><strong>26.55 h</strong><span>計薪／週</span></div><p class="quick-note">已納入 10/19–10/25 最新班表；第 1 週不列入。</p></article>
-  <article class="quick-card"><h2>固定生活費</h2><div class="quick-value"><strong>NZ$310／週</strong></div><p class="quick-note">房租、油錢與餐費。</p></article>
-</section>
-<!-- model:quick-info:end -->
-
+<a class="skip-link" href="#main">跳到主要內容</a>
+<header class="page-header container">
+  <div><p class="eyebrow">SUNSON · 紐西蘭打工度假</p><h1>工作收支</h1><p class="header-description">排班、薪資與退稅，一頁查看。</p></div>
+  <button id="shareButton" class="share-button" type="button">複製網址 <span aria-hidden="true">↗</span></button>
+  <p id="shareStatus" class="sr-only" role="status"></p>
+  <div class="freshness"><!-- model:freshness:start -->
+<span>薪資實績至 <b>10/23</b></span><span>班表公布 <b>10/16</b></span>
+<!-- model:freshness:end --></div>
+</header>
+<nav class="section-nav" aria-label="頁內導覽"><div class="container"><a href="#overview">總覽</a><a href="#tax">退稅</a><a href="#schedule">班表與發薪</a><a href="#payroll">薪資實績</a></div></nav>
+<main id="main" class="container">
+  <section id="overview" class="page-section">
+    <div class="section-heading"><h2>收支總覽</h2><span class="section-note">金額以 NZD 為主</span></div>
+    <!-- model:overview:start -->
+<div class="overview-grid">
+<article class="card actual-card"><div class="card-top"><h3>累計實領</h3><span class="tag actual">已核對 5 期</span></div><p class="big-number">NZ$4,897.78</p><p class="twd"><span data-nzd-to-twd="4897.78">約 NT$89,727</span></p><p class="muted">稅前 5,848.82 · PAYE 951.04</p><a class="card-link" href="#payroll"><span>10/23 本期實領</span><b>NZ$1,272.66</b></a></article>
+<article class="card budget-card"><div class="card-top"><h3>一般月份</h3><span class="tag estimate">未含退稅</span></div><div class="salary-pair"><div><span>稅前</span><strong>NZ$2,976</strong></div><div><span>稅後</span><strong>NZ$2,494</strong></div></div><div class="budget-bar" role="img" aria-label="稅後月收入約 2,494 元，其中生活費 1,343 元，可存 1,151 元"><span style="width:53.86%"></span></div><div class="budget-line"><span>生活費 <b>NZ$1,343</b></span><span>月可存 <b>NZ$1,151</b></span></div><p class="twd">可存 <span data-nzd-to-twd="1150.74">約 NT$21,082</span></p></article></div>
+<p class="basis-line">最新 9 週平均（第 2–10 週）：排班 <b>27.56 h</b>／計薪 <b>26.55 h</b>。含第 5 週，只排除到職的第 1 週。</p>
+<!-- model:overview:end -->
+  </section>
+  <section id="tax" class="page-section">
+    <div class="section-heading"><h2>可能退多少稅？</h2><span class="tag estimate">情境估算</span></div>
+    <div class="card tax-card">
       <!-- model:refund:start -->
-<section class="refund" aria-labelledby="refund-title">
-  <div class="refund-head"><h2 id="refund-title">2027 退稅預估</h2><strong class="refund-total">約 NZ$470</strong></div>
-  <p><span data-nzd-to-twd="469.67">約 NT$8,614</span> · 已依最新九週平均重算</p>
-  <div class="scenario-line"><span>攤 6 個月：月存約 <b>NZ$1,229</b></span><span>攤 9 個月：月存約 <b>NZ$1,203</b></span></div>
-  <p>沿用後續工作日期與雙週給薪假設；實際薪期仍待確認。退稅是一次性收入。</p>
-</section>
+<fieldset class="plan-options"><legend>後續工作怎麼接？</legend><label class="plan-option"><input type="radio" name="workPlan" value="sunson" ><span><b>只做 Sunson</b><small>11/19 後沒有其他薪資</small></span></label><label class="plan-option"><input type="radio" name="workPlan" value="two_jobs" ><span><b>接第二份</b><small>續做至 2/19，3 月不工作</small></span></label><label class="plan-option"><input type="radio" name="workPlan" value="planned" checked><span><b>原規劃三份</b><small>再從 3/15 開始第三份</small></span></label></fieldset>
+<div class="refund-hero"><div><span class="overline">2026/27 年度 · 年度結算估值</span><p id="refundValue" class="refund-number">NZ$470</p><p id="refundTwd" class="twd" data-nzd-to-twd="469.50">約 NT$8,601</p></div><p id="refundBasis" class="refund-context">原規劃三份工作；後兩份尚未確定。<br>尚未含 ASB 實際利息與 RWT。</p></div>
+<p class="notice">不同續工情境約 <b>NZ$319–512</b>。這是工作安排的比較，實際退稅仍隨薪資、扣繳與其他收入變動。</p>
 <!-- model:refund:end -->
-
-      <details class="panel">
-        <summary><span>班表與發薪至 11/19</span><span class="summary-hint plan-hint">11/6 · 稅後約 NZ$879</span></summary>
-        <div class="panel-body">
-          <!-- model:latest:start -->
-<h2>已公布班表 · 10/19–10/25</h2><p class="intro">信箱通知於 10/16 公布；以下是預定班次，尚非出勤實績。</p>
-<div class="shifts"><article class="shift"><strong>10/21（三）</strong><span>09:15–18:45 · Cashier 1</span></article><article class="shift"><strong>10/24（六）</strong><span>11:00–16:00 · Storeman 2</span></article></div><p class="plan-note">排班 14.50 小時，預估計薪 13.50 小時。預設每班 4 小時以上扣 30 分鐘無薪休息。</p>
-<!-- model:latest:end -->
-
-          <!-- model:publish:start -->
-<h2>預計公布班表</h2><div class="publish-list"><div class="publish-item"><strong>10/24（六）–10/25（日）</strong><span>10/26–11/1 班表</span></div><div class="publish-item"><strong>10/31（六）–11/1（日）</strong><span>11/2–11/8 班表</span></div><div class="publish-item"><strong>11/7（六）–11/8（日）</strong><span>11/9–11/15 班表</span></div><div class="publish-item"><strong>11/14（六）–11/15（日）</strong><span>11/16–11/22 班表；上班至 11/19</span></div></div><p class="plan-note">依每週六、日公布的安排推估；實際公告日期可能變動。</p>
-<!-- model:publish:end -->
-
-          <h2>雙週週五發薪估值</h2>
-          <p class="intro">依 10/23 實際發薪日起每 14 天推算；日期與金額皆為預估。</p>
-          <!-- model:paydays:start -->
-<div class="planned-payments"><article class="planned-pay"><div class="planned-pay-head"><strong>11/6（五）</strong><span>10/19–11/1</span></div><p class="quick-note">計薪 40.05 h · 最新平均推估；待班表更新</p><div class="planned-values"><span>稅前<b>NZ$1,036</b></span><span>稅後<b>NZ$879</b></span></div></article><article class="planned-pay"><div class="planned-pay-head"><strong>11/20（五）</strong><span>11/2–11/15</span></div><p class="quick-note">計薪 53.10 h · 最新平均推估；待班表更新</p><div class="planned-values"><span>稅前<b>NZ$1,373</b></span><span>稅後<b>NZ$1,151</b></span></div></article><article class="planned-pay"><div class="planned-pay-head"><strong>12/4（五）</strong><span>末期估至 11/19</span></div><p class="quick-note">計薪 15.17 h · 最新平均推估；待班表更新</p><div class="planned-values"><span>稅前<b>NZ$392</b></span><span>稅後<b>NZ$344</b></span></div></article></div><p class="plan-note">金額含 8% 假期加給；稅後依 M 稅碼及 ACC 推估，畫面取整至元。最新 10/19–10/25 班表計入 11/6 預估。未公布部分按最新平均及有效日數／7 暫估。後續班表、扣繳與末期調整可能改變金額。</p>
+      <details class="disclosure"><summary>查看情境、公式與退稅平攤</summary><div class="disclosure-body">
+        <!-- model:refund-detail:start -->
+<div class="table-wrap"><table><caption>工作安排情境（均含已領薪資）</caption><thead><tr><th>安排</th><th>年度稅前</th><th>退稅估值</th></tr></thead><tbody><tr><th scope="row">只做 Sunson</th><td>NZ$8,651</td><td><b>NZ$319</b></td></tr><tr><th scope="row">接第二份</th><td>NZ$17,676</td><td><b>NZ$512</b></td></tr><tr><th scope="row">原規劃三份</th><td>NZ$18,363</td><td><b>NZ$470</b></td></tr></tbody></table></div>
+<p class="muted">第二份暫定 2026/11/20–2027/2/19；第三份暫定 2027/3/15 起。條件沿用相同時薪、平均工時、M 稅碼及雙週發薪，均屬假設。</p>
+<h3>所選情境的計算</h3><table class="math-table"><tbody><tr><th scope="row">年度應稅薪資</th><td data-tax-field="gross">NZ$18,363.21</td></tr><tr><th scope="row">薪資已扣及預估 PAYE（含 ACC）</th><td data-tax-field="paye">NZ$2,912.42</td></tr><tr><th scope="row">利息／已扣 RWT</th><td data-tax-field="interest">金額未提供；基準未計</td></tr><tr><th scope="row">全年應繳所得稅</th><td data-tax-field="income_tax">NZ$2,121.56</td></tr><tr><th scope="row">全年薪資 ACC</th><td data-tax-field="acc">NZ$321.36</td></tr><tr><th scope="row">PAYE＋RWT－所得稅－ACC</th><td data-tax-field="refund">NZ$469.50</td></tr></tbody></table>
+<p class="muted">PAYE 包含 ACC，不能把扣繳全數視為可退所得稅。首末不足完整薪期仍依正常雙週算扣繳；各雇主分開計算。</p>
+<h3>工時與薪期改變時</h3><table><tbody><tr><th scope="row">原規劃，未公布班次 20 h／週</th><td>NZ$465.46</td></tr><tr><th scope="row">原規劃，平均 26.55 h／週</th><td>NZ$469.50</td></tr><tr><th scope="row">原規劃，未公布班次 32 h／週</th><td>NZ$463.90</td></tr><tr><th scope="row">後兩份改為週薪（日期相同）</th><td>NZ$490.91</td></tr></tbody></table><p class="muted">20／32 小時只替換未公布部分，保留已公布班表及實績。薪期比較保留 Sunson 雙週、僅改後兩份；不是保證範圍。</p>
+<h3>把退稅攤回每月</h3><table><thead><tr><th>攤回方式</th><th>含退稅月領</th><th>月可存</th></tr></thead><tbody><tr><th scope="row">6 個月</th><td data-spread-net="6">NZ$2,572</td><td data-spread-saving="6">NZ$1,229</td></tr><tr><th scope="row">9 個月</th><td data-spread-net="9">NZ$2,546</td><td data-spread-saving="9">NZ$1,203</td></tr></tbody></table><p class="muted">僅供月平均比較；稅前月薪不變，退稅會在結算後入帳。9 個月情境未計下一稅年度可能退稅。</p>
+<!-- model:refund-detail:end -->
+      </div></details>
+      <details class="disclosure"><summary>ASB 利息與 RWT</summary><div class="disclosure-body">
+        <!-- model:bank:start -->
+<div class="bank-note"><div><span class="overline">已確認帳戶</span><h3>ASB Savings On Call <strong>0.25% p.a.</strong></h3></div><span class="tag estimate">利息金額待確認</span></div><p>可隨時動用，所有餘額同率；按日計息、每月入帳。0.25% 自 2026/7/15 09:00 生效，於 2026-10-23 查核。<a href="https://www.asb.co.nz/bank-accounts/interest-rates-fees.html" target="_blank" rel="noopener noreferrer">ASB 官方利率</a>。</p><p class="muted">每 NZ$1,000 平均餘額，一年稅前利息約 NZ$2.50。下方只估 10/23–3/31 的 160 天；以現行利率維持不變為假設。過去已累積但未入帳利息仍需補入；年度金額以 ASB／myIR 為準。輸入留在此裝置，不會上傳。</p>
+<div class="input-grid"><label>未來期間平均餘額（NZ$）<input id="bankBalance" type="number" min="0" step="100" placeholder="例如 5,000" inputmode="decimal"></label><label>RWT 稅率（請核對實際設定）<select id="bankRwt"><option value="0.105">10.5%</option><option value="0.175" selected>17.5%（暫用假設）</option><option value="0.30">30%</option><option value="0.33">33%</option><option value="0.39">39%</option><option value="0.45">45%</option></select></label></div><p id="interestImpact" class="input-feedback" aria-live="polite">利息與 RWT 金額未提供，目前退稅先依薪資估算。</p>
+<details class="disclosure"><summary>補入截至目前已收利息與 RWT</summary><div class="disclosure-body"><div class="input-grid"><label>已收稅前利息（NZ$）<input id="interestIncome" type="number" min="0" step="0.01" placeholder="依 ASB 或 myIR 金額" inputmode="decimal"></label><label>已扣 RWT（NZ$）<input id="interestRwt" type="number" min="0" step="0.01" placeholder="依 ASB 或 myIR 金額" inputmode="decimal"></label></div></div></details><p class="muted">居民利息加進所得稅，不計 ACC；RWT 再抵扣。若邊際稅率與 RWT 同為 17.5%，小額利息通常不改變退稅。若為非稅務居民，需改查 NRWT。<a href="https://www.ird.govt.nz/rwt-rate" target="_blank" rel="noopener noreferrer">IRD 利息扣繳規則</a></p>
+<!-- model:bank:end -->
+      </div></details>
+      <p id="taxStatus" class="sr-only" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+  <section id="schedule" class="page-section">
+    <div class="section-heading"><h2>班表與發薪</h2><span class="section-note">最後上班 11/19</span></div>
+    <div class="schedule-grid">
+      <article class="card"><!-- model:roster:start -->
+<div class="subhead"><h3>最新班表 10/19–10/25</h3><span class="muted">10/16 公布</span></div><ul class="shift-list"><li><div class="shift-date"><b>10/21</b><span>週三</span></div><div><strong>09:15–18:45</strong><small>Cashier 1</small></div><span class="tag estimate">班表日期已過 · 待薪資單</span></li><li><div class="shift-date"><b>10/24</b><span>週六</span></div><div><strong>11:00–16:00</strong><small>Storeman 2</small></div><span class="tag estimate">預定班次</span></li></ul><p class="muted">排班 14.50 h，預估計薪 13.50 h。每班 4 小時以上預設扣 30 分鐘無薪休息；薪資尚待核對。</p>
+<!-- model:roster:end --></article>
+      <article class="card"><div class="subhead"><h3>接下來的發薪日</h3><span class="tag estimate">預估</span></div>
+        <!-- model:paydays:start -->
+<table class="payday-table"><thead><tr><th>發薪日</th><th>稅前</th><th>稅後</th></tr></thead><tbody><tr><th scope="row"><b>11/6</b><span class="pay-weekday">（五）</span><small>10/19–11/1</small></th><td>NZ$1,036</td><td><b>NZ$879</b></td></tr><tr><th scope="row"><b>11/20</b><span class="pay-weekday">（五）</span><small>11/2–11/15</small></th><td>NZ$1,373</td><td><b>NZ$1,151</b></td></tr><tr><th scope="row"><b>12/4</b><span class="pay-weekday">（五）</span><small>末期至 11/19</small></th><td>NZ$392</td><td><b>NZ$344</b></td></tr></tbody></table><p class="muted">已公布至 10/19–10/25 的班次已計入相應薪期；未公布部分按平均 26.55 h／週推估。11/19 為最後上班日；尾薪暫列原薪期 12/4，若雇主提前結清會再更新。</p>
 <!-- model:paydays:end -->
-        </div>
-      </details>
-
-      <details class="panel">
-        <summary><span>查看薪資實績與歷史班表</span><span class="summary-hint">五期薪資 · 十週排班</span></summary>
-        <div class="panel-body">
-          <h2>雙週薪資實績</h2>
-          <p class="intro">單期時數為薪資單總數；各週拆分只作估算。</p>
-          <!-- model:actual:start -->
-<div class="pays"><article class="pay"><div class="pay-top"><strong>8/28 發薪</strong><span>8/20</span></div><div class="pay-grid"><div class="pay-cell"><small>計薪</small><b>4.67 h</b></div><div class="pay-cell"><small>稅前</small><b>NZ$96.64</b></div><div class="pay-cell"><small>實領</small><b>NZ$84.82</b></div></div><div class="quick-note">PAYE NZ$11.82</div></article><article class="pay"><div class="pay-top"><strong>9/11 發薪</strong><span>8/24–9/6</span></div><div class="pay-grid"><div class="pay-cell"><small>計薪</small><b>55.83 h</b></div><div class="pay-cell"><small>稅前</small><b>NZ$1,364.80</b></div><div class="pay-cell"><small>實領</small><b>NZ$1,144.10</b></div></div><div class="quick-note">PAYE NZ$220.70</div></article><article class="pay"><div class="pay-top"><strong>9/25 發薪</strong><span>9/7–9/20</span></div><div class="pay-grid"><div class="pay-cell"><small>計薪</small><b>48.37 h</b></div><div class="pay-cell"><small>稅前</small><b>NZ$1,251.14</b></div><div class="pay-cell"><small>實領</small><b>NZ$1,052.32</b></div></div><div class="quick-note">PAYE NZ$198.82</div></article><article class="pay"><div class="pay-top"><strong>10/9 發薪</strong><span>9/21–10/4</span></div><div class="pay-grid"><div class="pay-cell"><small>計薪</small><b>62.33 h</b></div><div class="pay-cell"><small>稅前</small><b>NZ$1,612.22</b></div><div class="pay-cell"><small>實領</small><b>NZ$1,343.88</b></div></div><div class="quick-note">PAYE NZ$268.34</div></article><article class="pay"><div class="pay-top"><strong>10/23 發薪</strong><span>10/5–10/18</span></div><div class="pay-grid"><div class="pay-cell"><small>計薪</small><b>58.92 h</b></div><div class="pay-cell"><small>稅前</small><b>NZ$1,524.02</b></div><div class="pay-cell"><small>實領</small><b>NZ$1,272.66</b></div></div><div class="quick-note">PAYE NZ$251.36</div></article></div>
+      </article>
+    </div>
+    <details class="disclosure standalone"><summary>每週六、日班表公布時程</summary><div class="disclosure-body"><!-- model:publish:start -->
+<ul class="publication-list"><li><b>10/24–10/25</b><span>公布 10/26–11/1 班表</span></li><li><b>10/31–11/1</b><span>公布 11/2–11/8 班表</span></li><li><b>11/7–11/8</b><span>公布 11/9–11/15 班表</span></li><li><b>11/14–11/15</b><span>公布 11/16–11/22 班表</span></li></ul><p class="muted">依每週六、日公布的安排推估；最後一週只工作至 11/19。</p>
+<!-- model:publish:end --></div></details>
+  </section>
+  <section id="payroll" class="page-section">
+    <div class="section-heading"><h2>薪資實績</h2><span class="tag actual">依薪資單</span></div>
+    <p class="section-intro">最新一期先展開；點日期看稅前、扣繳與計薪工時。</p>
+    <!-- model:actual:start -->
+<div class="pay-records"><details class="pay-record" open><summary><span><b>10/23 發薪</b><small>10/5–10/18</small></span><span class="record-net">實領 NZ$1,272.66</span></summary><div class="record-body"><dl class="record-grid"><div><dt>計薪</dt><dd>58.92 h</dd></div><div><dt>稅前</dt><dd>NZ$1,524.02</dd></div><div><dt>PAYE（含 ACC）</dt><dd>NZ$251.36</dd></div></dl></div></details><details class="pay-record" ><summary><span><b>10/9 發薪</b><small>9/21–10/4</small></span><span class="record-net">實領 NZ$1,343.88</span></summary><div class="record-body"><dl class="record-grid"><div><dt>計薪</dt><dd>62.33 h</dd></div><div><dt>稅前</dt><dd>NZ$1,612.22</dd></div><div><dt>PAYE（含 ACC）</dt><dd>NZ$268.34</dd></div></dl></div></details><details class="pay-record" ><summary><span><b>9/25 發薪</b><small>9/7–9/20</small></span><span class="record-net">實領 NZ$1,052.32</span></summary><div class="record-body"><dl class="record-grid"><div><dt>計薪</dt><dd>48.37 h</dd></div><div><dt>稅前</dt><dd>NZ$1,251.14</dd></div><div><dt>PAYE（含 ACC）</dt><dd>NZ$198.82</dd></div></dl></div></details><details class="pay-record" ><summary><span><b>9/11 發薪</b><small>8/24–9/6</small></span><span class="record-net">實領 NZ$1,144.10</span></summary><div class="record-body"><dl class="record-grid"><div><dt>計薪</dt><dd>55.83 h</dd></div><div><dt>稅前</dt><dd>NZ$1,364.80</dd></div><div><dt>PAYE（含 ACC）</dt><dd>NZ$220.70</dd></div></dl></div></details><details class="pay-record" ><summary><span><b>8/28 發薪</b><small>8/20</small></span><span class="record-net">實領 NZ$84.82</span></summary><div class="record-body"><dl class="record-grid"><div><dt>計薪</dt><dd>4.67 h</dd></div><div><dt>稅前</dt><dd>NZ$96.64</dd></div><div><dt>PAYE（含 ACC）</dt><dd>NZ$11.82</dd></div></dl></div></details></div>
 <!-- model:actual:end -->
-          <h2>每週原始排班</h2>
-          <p class="intro">班次時間為紐西蘭當地時間。點開週次查看日期與時段。</p>
-          <!-- model:weeks:start -->
-<div class="week-list"><details class="week"><summary><span class="week-name">第 1 週 · 8/17–8/23</span><span class="week-hours">排班 5.00 h · 計薪約 4.67 h</span><span class="status actual">薪資單</span></summary><div class="week-detail"><p>8/20　10:00–15:00。第 1 週不列入平均。</p></div></details><details class="week"><summary><span class="week-name">第 2 週 · 8/24–8/30</span><span class="week-hours">排班 32.50 h · 計薪約 31.42 h</span><span class="status ">拆分估算</span></summary><div class="week-detail"><p>8/27、8/28　10:00–18:00；8/29　11:00–18:45；8/30　10:00–18:45。</p></div></details><details class="week"><summary><span class="week-name">第 3 週 · 8/31–9/6</span><span class="week-hours">排班 25.25 h · 計薪約 24.41 h</span><span class="status ">拆分估算</span></summary><div class="week-detail"><p>9/4　11:00–18:45；9/5、9/6　10:00–18:45。</p></div></details><details class="week"><summary><span class="week-name">第 4 週 · 9/7–9/13</span><span class="week-hours">排班 33.00 h · 計薪約 31.45 h</span><span class="status ">拆分估算</span></summary><div class="week-detail"><p>9/7、9/8　11:00–18:45；9/12、9/13　10:00–18:45。</p></div></details><details class="week"><summary><span class="week-name">第 5 週 · 9/14–9/20</span><span class="week-hours">排班 17.75 h · 計薪約 16.92 h</span><span class="status ">拆分估算</span></summary><div class="week-detail"><p>9/15、9/17　10:30–15:00；9/20　10:00–18:45。</p></div></details><details class="week"><summary><span class="week-name">第 6 週 · 9/21–9/27</span><span class="week-hours">排班 34.25 h · 計薪約 32.72 h</span><span class="status ">拆分估算</span></summary><div class="week-detail"><p>9/21　11:00–18:45；9/22、9/25　10:30–15:00；9/26、9/27　10:00–18:45。</p></div></details><details class="week"><summary><span class="week-name">第 7 週 · 9/28–10/4</span><span class="week-hours">排班 31.00 h · 計薪約 29.61 h</span><span class="status ">拆分估算</span></summary><div class="week-detail"><p>9/29、10/1、10/2　10:30–15:00；10/3、10/4　10:00–18:45。</p></div></details><details class="week"><summary><span class="week-name">第 8 週 · 10/5–10/11</span><span class="week-hours">排班 34.00 h · 計薪約 33.53 h</span><span class="status ">拆分估算</span></summary><div class="week-detail"><p>10/8、10/9　10:30–18:45；10/10、10/11　10:00–18:45。</p></div></details><details class="week"><summary><span class="week-name">第 9 週 · 10/12–10/18</span><span class="week-hours">排班 25.75 h · 計薪約 25.39 h</span><span class="status ">拆分估算</span></summary><div class="week-detail"><p>10/16　10:30–18:45；10/17、10/18　10:00–18:45。</p></div></details><details class="week"><summary><span class="week-name">第 10 週 · 10/19–10/25</span><span class="week-hours">排班 14.50 h · 計薪約 13.50 h</span><span class="status ">已公布班表</span></summary><div class="week-detail"><p>10/21　09:15–18:45；10/24　11:00–16:00。按預設無薪休息估計，待薪資單核對。</p></div></details></div><p class="intro" style="margin-top:12px">平均採第 2、3、4、5、6、7、8、9、10 週：排班共 248.00 h，計薪估值共 238.95 h。已領薪週按薪資單時數拆分；未領薪週依班表扣無薪休息估算。計算保留未四捨五入時數。</p>
-<!-- model:weeks:end -->
-        </div>
-      </details>
-
-      <details class="panel">
-        <summary><span>查看計算方式與來源</span><span class="summary-hint">匯率 · 薪資 · 退稅</span></summary>
-        <div class="panel-body">
-          <!-- model:salary-method:start -->
-<h2>薪資與生活費</h2><ul class="assumptions">
-<li>累計前 20 個計薪小時 NZ$19.16／小時，其後 NZ$23.95／小時；另加 8% 假期加給。後續預估採正常時薪。</li>
-<li>每班 4 小時以上預設扣 30 分鐘無薪休息；已領薪時數與金額依薪資單，不額外扣除。</li>
-<li>最新九週平均計薪 26.55 h。月化稅前 NZ$2,975.88、PAYE（含 ACC）NZ$481.86、稅後 NZ$2,494.03；按雙週給薪估扣稅後，乘 26 ÷ 12 月化。</li>
-<li>生活費每週 NZ$310：房租 $120、油錢 $40、餐費 $150。月化 × 52 ÷ 12，月可存 NZ$1,150.69。</li></ul>
-<!-- model:salary-method:end -->
-          <!-- model:refund-method:start -->
-<h2>退稅模型</h2><ul class="assumptions">
-<li>2026/27 年度以 2026/4/1–2027/3/31 發薪日為界。預估薪資 NZ$18,363.16、預扣 PAYE NZ$2,912.58；全年所得稅 NZ$2,121.55＋ACC NZ$321.36＝NZ$2,442.91。差額預估退稅 NZ$469.67。</li>
-<li>已領薪資及 PAYE 為起點；Sunson 未領薪部分依已公布班表或最新平均。第二份暫定 2026/11/20–2027/2/19；第三份 2027/3/15 起。兩份皆暫沿用相同薪資與雙週薪期，逐雇主估扣 PAYE。</li>
-<li>同一雙週週期下，第三份在 3/26 暫估領 3/15–21 的薪資；3/22 起如於 4/9 發薪，歸下一年度。其他雇主實際發薪日及工作日期改變時，本模型須同步重算。<a href="https://www.taxpolicy.ird.govt.nz/-/media/project/ir/tp/publications/2015/2015-dd-mts-4-paye-gst/2015-dd-mts-4-paye-gst-pdf.pdf" target="_blank" rel="noopener noreferrer">IRD 薪資入帳年度說明</a>。</li>
-<li>攤 6 個月：每月加 NZ$78.28，含退稅月領 NZ$2,572.30、月存 NZ$1,228.97。攤 9 個月：每月加 NZ$52.19，月領 NZ$2,546.21、月存 NZ$1,202.88。月領均為稅後加一次性退稅平攤，稅前月薪不變；9 個月情境未含 2028 年退稅，不代表各月實際入帳。</li>
-<li>本模型僅包含已列的紐西蘭薪資，未納入利息、其他收入及抵免；不是 IRD 結算結果。<a href="https://www.ird.govt.nz/income-tax-assessments" target="_blank" rel="noopener noreferrer">IRD 年度結算</a>。</li></ul>
-<!-- model:refund-method:end -->
-          <h2>匯率與資料限制</h2>
-          <ul class="assumptions">
-            <!-- model:fx-method:start -->
-<li>紐幣收入、存款與退稅換回台幣，依星展即期買入 18.34 換算；同一牌告即期賣出 18.73。牌告時間：2026/10/23 11:50（台灣時間）。<a href="https://www.dbs.com.tw/personal-zh/rates/foreign-exchange-rates.page" target="_blank" rel="noopener noreferrer">星展牌告來源</a>。此為查詢快照，非自動即時更新；實際交易以當時牌告為準。</li>
-<!-- model:fx-method:end -->
-            <!-- model:actual-source:start -->
-<li>截至 2026/10/23 的稅務摘要與薪資單合計一致：應稅 NZ$5,848.82、PAYE／扣繳 NZ$951.04（含 ACC NZ$102.34；扣除 ACC 後 NZ$848.70）。歷史週拆分及未領薪週工時為估值。</li>
-<!-- model:actual-source:end -->
-            <li>2026/27 ACC earners' levy 為 1.75%；最終稅務結果依 IRD 個人資料與年終結算為準。<a href="https://www.ird.govt.nz/income-tax/income-tax-for-individuals/acc-clients-and-carers/acc-earners-levy-rates" target="_blank" rel="noopener noreferrer">IRD ACC levy 費率</a></li>
-            <li>未來 PAYE 試算依 2026/27 所得稅級距及 ACC 費率估算：<a href="https://www.ird.govt.nz/income-tax/income-tax-for-individuals/tax-codes-and-tax-rates-for-individuals/tax-rates-for-individuals" target="_blank" rel="noopener noreferrer">IRD 個人所得稅率</a>、<a href="https://www.ird.govt.nz/acclevy" target="_blank" rel="noopener noreferrer">ACC levy</a>。</li>
-            <li>本頁公開但不列姓名，沒有銀行帳號、住址、稅號、聯絡方式或薪資單影像；不收集輸入、不使用分析追蹤。</li>
-          </ul>
-          <p class="source-links"><a href="https://docs.github.com/en/get-started/learning-about-github/githubs-plans" target="_blank" rel="noopener noreferrer">GitHub Free 方案</a>支援公開儲存庫的 Pages。網站沒有預設下架日，持續提供依 GitHub 政策與帳號狀態而定。</p>
-        </div>
-      </details>
-    </main>
-    <footer>薪資實績截至 2026/10/23 · 班表及全部估值更新至 2026/10/23 · 台幣按標示牌告換算</footer>
-  </div>
-  <script>
-    (() => {
-      const input = document.getElementById('fxRate');
-      const format = new Intl.NumberFormat('zh-TW', { maximumFractionDigits: 0 });
-      function updateTwd() {
-        const rate = Number(input.value);
-        if (!Number.isFinite(rate) || rate <= 0) return;
-        document.querySelectorAll('[data-nzd-to-twd]').forEach((node) => {
-          const amount = Number(node.dataset.nzdToTwd);
-          if (Number.isFinite(amount)) node.textContent = '約 NT$' + format.format(Math.round(amount * rate));
-        });
-      }
-      input.addEventListener('input', updateTwd);
-      updateTwd();
-    })();
-  </script>
+    <details class="disclosure standalone"><summary>核對年度稅務摘要</summary><div class="disclosure-body"><!-- model:tax-proof:start -->
+<p>5 期薪資與 10/23 稅務摘要相符：應稅 <b>NZ$5,848.82</b>，PAYE <b>NZ$951.04</b>；其中 ACC NZ$102.34、所得稅 NZ$848.70。</p>
+<!-- model:tax-proof:end --></div></details>
+    <details class="disclosure standalone"><summary>歷史原始班表與每週工時</summary><div class="disclosure-body"><!-- model:weeks:start -->
+<div class="week-records"><details class="week-record"><summary><span><b>第 10 週 · 10/19–10/25</b><small>排班 14.50 h · 計薪約 13.50 h</small></span><span class="tag estimate">班表估計</span></summary><ul class="week-shifts"><li><span>10/21</span><b>09:15–18:45</b></li><li><span>10/24</span><b>11:00–16:00</b></li></ul></details><details class="week-record"><summary><span><b>第 9 週 · 10/12–10/18</b><small>排班 25.75 h · 計薪約 25.39 h</small></span><span class="tag estimate">薪期拆估</span></summary><ul class="week-shifts"><li><span>10/16</span><b>10:30–18:45</b></li><li><span>10/17、10/18</span><b>10:00–18:45</b></li></ul></details><details class="week-record"><summary><span><b>第 8 週 · 10/5–10/11</b><small>排班 34.00 h · 計薪約 33.53 h</small></span><span class="tag estimate">薪期拆估</span></summary><ul class="week-shifts"><li><span>10/8、10/9</span><b>10:30–18:45</b></li><li><span>10/10、10/11</span><b>10:00–18:45</b></li></ul></details><details class="week-record"><summary><span><b>第 7 週 · 9/28–10/4</b><small>排班 31.00 h · 計薪約 29.61 h</small></span><span class="tag estimate">薪期拆估</span></summary><ul class="week-shifts"><li><span>9/29、10/1、10/2</span><b>10:30–15:00</b></li><li><span>10/3、10/4</span><b>10:00–18:45</b></li></ul></details><details class="week-record"><summary><span><b>第 6 週 · 9/21–9/27</b><small>排班 34.25 h · 計薪約 32.72 h</small></span><span class="tag estimate">薪期拆估</span></summary><ul class="week-shifts"><li><span>9/21</span><b>11:00–18:45</b></li><li><span>9/22、9/25</span><b>10:30–15:00</b></li><li><span>9/26、9/27</span><b>10:00–18:45</b></li></ul></details><details class="week-record"><summary><span><b>第 5 週 · 9/14–9/20</b><small>排班 17.75 h · 計薪約 16.92 h</small></span><span class="tag estimate">薪期拆估</span></summary><ul class="week-shifts"><li><span>9/15、9/17</span><b>10:30–15:00</b></li><li><span>9/20</span><b>10:00–18:45</b></li></ul></details><details class="week-record"><summary><span><b>第 4 週 · 9/7–9/13</b><small>排班 33.00 h · 計薪約 31.45 h</small></span><span class="tag estimate">薪期拆估</span></summary><ul class="week-shifts"><li><span>9/7、9/8</span><b>11:00–18:45</b></li><li><span>9/12、9/13</span><b>10:00–18:45</b></li></ul></details><details class="week-record"><summary><span><b>第 3 週 · 8/31–9/6</b><small>排班 25.25 h · 計薪約 24.41 h</small></span><span class="tag estimate">薪期拆估</span></summary><ul class="week-shifts"><li><span>9/4</span><b>11:00–18:45</b></li><li><span>9/5、9/6</span><b>10:00–18:45</b></li></ul></details><details class="week-record"><summary><span><b>第 2 週 · 8/24–8/30</b><small>排班 32.50 h · 計薪約 31.42 h</small></span><span class="tag estimate">薪期拆估</span></summary><ul class="week-shifts"><li><span>8/27、8/28</span><b>10:00–18:00</b></li><li><span>8/29</span><b>11:00–18:45</b></li><li><span>8/30</span><b>10:00–18:45</b></li></ul></details><details class="week-record"><summary><span><b>第 1 週 · 8/17–8/23</b><small>排班 5.00 h · 計薪約 4.67 h</small></span><span class="tag actual">薪資單</span></summary><ul class="week-shifts"><li><span>8/20</span><b>10:00–15:00</b></li></ul><p class=muted>本週不列入平均。</p></details></div><p class="muted">平均採第 2–10 週，排班共 248.00 h、計薪共 238.95 h。已領薪週按薪期實績比例拆分，單週仍屬估值；未領薪週才扣預設休息。</p>
+<!-- model:weeks:end --></div></details>
+  </section>
+  <section class="page-section" aria-labelledby="sources-title">
+    <div class="section-heading"><h2 id="sources-title">換算與資料基準</h2></div>
+    <div class="fx-card"><!-- model:fx:start -->
+<div class="fx-heading"><label for="fxRate">紐幣換回台幣</label><span class="rate-input">NZ$1 = NT$ <input id="fxRate" type="number" min="0.01" max="1000" step="0.01" value="18.32" inputmode="decimal" aria-describedby="fxHelp"></span></div><p id="fxHelp"><a href="https://www.dbs.com.tw/personal-zh/rates/foreign-exchange-rates.page" target="_blank" rel="noopener noreferrer">星展即期買入 18.32</a> · 同時賣出 18.70<br>2026/10/23 13:30（台灣時間） 牌告快照；可修改匯率試算。</p>
+<!-- model:fx:end --></div>
+    <details class="disclosure standalone"><summary>台幣金額對照</summary><div class="disclosure-body"><!-- model:currency-details:start -->
+<p class="muted">依上方星展買入牌告或自行輸入的匯率換算，僅供參考。</p><h3>一般月份</h3><table><tbody><tr><th scope="row">月薪稅前</th><td><span data-nzd-to-twd="2975.90">約 NT$54,518</span></td></tr><tr><th scope="row">月薪稅後</th><td><span data-nzd-to-twd="2494.07">約 NT$45,691</span></td></tr><tr><th scope="row">每月生活費</th><td><span data-nzd-to-twd="1343.33">約 NT$24,610</span></td></tr><tr><th scope="row">每月可存</th><td><span data-nzd-to-twd="1150.74">約 NT$21,082</span></td></tr></tbody></table><h3>薪資單與後續發薪</h3><ul class="currency-comparison"><li><b>11/6 預估</b><div><span><small>稅前</small><span data-nzd-to-twd="1035.94">約 NT$18,978</span></span><span><small>稅後</small><span data-nzd-to-twd="878.54">約 NT$16,095</span></span></div></li><li><b>11/20 預估</b><div><span><small>稅前</small><span data-nzd-to-twd="1373.49">約 NT$25,162</span></span><span><small>稅後</small><span data-nzd-to-twd="1151.11">約 NT$21,088</span></span></div></li><li><b>12/4 預估</b><div><span><small>稅前</small><span data-nzd-to-twd="392.43">約 NT$7,189</span></span><span><small>稅後</small><span data-nzd-to-twd="344.37">約 NT$6,309</span></span></div></li><li><b>10/23 已領</b><div><span><small>稅前</small><span data-nzd-to-twd="1524.02">約 NT$27,920</span></span><span><small>稅後</small><span data-nzd-to-twd="1272.66">約 NT$23,315</span></span></div></li><li><b>10/9 已領</b><div><span><small>稅前</small><span data-nzd-to-twd="1612.22">約 NT$29,536</span></span><span><small>稅後</small><span data-nzd-to-twd="1343.88">約 NT$24,620</span></span></div></li><li><b>9/25 已領</b><div><span><small>稅前</small><span data-nzd-to-twd="1251.14">約 NT$22,921</span></span><span><small>稅後</small><span data-nzd-to-twd="1052.32">約 NT$19,279</span></span></div></li><li><b>9/11 已領</b><div><span><small>稅前</small><span data-nzd-to-twd="1364.80">約 NT$25,003</span></span><span><small>稅後</small><span data-nzd-to-twd="1144.10">約 NT$20,960</span></span></div></li><li><b>8/28 已領</b><div><span><small>稅前</small><span data-nzd-to-twd="96.64">約 NT$1,770</span></span><span><small>稅後</small><span data-nzd-to-twd="84.82">約 NT$1,554</span></span></div></li></ul><h3>所選退稅情境攤回每月</h3><ul class="currency-comparison"><li><b>攤回 6 個月</b><div><span><small>含退稅月領</small><span data-spread-net-twd="6" data-nzd-to-twd="2572.32">約 NT$47,125</span></span><span><small>月可存</small><span data-spread-saving-twd="6" data-nzd-to-twd="1228.99">約 NT$22,515</span></span></div></li><li><b>攤回 9 個月</b><div><span><small>含退稅月領</small><span data-spread-net-twd="9" data-nzd-to-twd="2546.24">約 NT$46,647</span></span><span><small>月可存</small><span data-spread-saving-twd="9" data-nzd-to-twd="1202.91">約 NT$22,037</span></span></div></li></ul>
+<!-- model:currency-details:end --></div></details>
+    <details class="disclosure standalone"><summary>薪資、生活費與稅務計算規則</summary><div class="disclosure-body"><!-- model:method:start -->
+<div class="method-grid"><div><h3>薪資與預算</h3><ul><li>累計前 20 小時按 NZ$19.16，其後 NZ$23.95；另加 8% 假期加給，已計入各期稅前。</li><li>未領薪每班滿 4 小時扣 30 分鐘；薪資單時數保留實績，不再扣一次。</li><li>一般月薪按雙週 ×26÷12；固定生活費每週 NZ$310，月化 ×52÷12。房租 120、油錢 40、餐費 150／週。</li></ul></div><div><h3>退稅的年度與限制</h3><ul><li>只計 2026/4/1–2027/3/31 入帳薪資。依假設薪期，3/26 領 3/15–21；3/22 後若 4/9 領，歸下一稅年。</li><li>M 稅碼依 IRD 官方截尾規則；普通工資與 8% 加給分別取分。公式已重現五期實際 PAYE。</li><li>ACC 1.75%，上限 NZ$156,641；利息不課 ACC。現有薪資情境皆未達 IETC 最低 NZ$24,000，未加所得稅抵免。</li><li>未提供的其他收入、境外收入、居住身分與抵免可能影響結算；後續雇主、薪期、時薪與工時確定後須重算。</li></ul></div></div>
+<!-- model:method:end --><h3>官方依據</h3><!-- model:sources:start -->
+<ul class="source-list"><li><a href="https://www.ird.govt.nz/-/media/project/ir/home/documents/digital-service-providers/software-providers/payroll-calculations-business-rules-specifications/payroll-calculations-and-business-rules-specification.pdf" target="_blank" rel="noopener noreferrer">IRD 2026/27 PAYE 公式 §5.2</a></li><li><a href="https://www.ird.govt.nz/income-tax/income-tax-for-individuals/tax-codes-and-tax-rates-for-individuals/tax-rates-for-individuals" target="_blank" rel="noopener noreferrer">所得稅級距</a> · <a href="https://www.ird.govt.nz/income-tax/income-tax-for-individuals/acc-clients-and-carers/acc-earners-levy-rates" target="_blank" rel="noopener noreferrer">ACC 費率</a></li><li><a href="https://www.ird.govt.nz/income-tax/income-tax-for-individuals/individual-tax-credits/independent-earner-tax-credit-ietc" target="_blank" rel="noopener noreferrer">IETC 資格</a> · <a href="https://www.ird.govt.nz/international-tax/individuals/tax-residency-status-for-individuals" target="_blank" rel="noopener noreferrer">稅務居民</a></li><li><a href="https://www.employment.govt.nz/pay-and-hours/pay-and-wages/final-pay" target="_blank" rel="noopener noreferrer">尾薪時程</a> · <a href="https://www.taxtechnical.ird.govt.nz/operational-positions/commissioners-operational-position-on-calculating-paye-on-holiday-pay" target="_blank" rel="noopener noreferrer">假期薪資扣繳</a></li><li><a href="https://www.ird.govt.nz/-/media/project/ir/home/documents/forms-and-guides/ir300---ir399/ir335/ir335.pdf" target="_blank" rel="noopener noreferrer">IRD 雇主指南（部分薪期）</a> · <a href="https://www.taxpolicy.ird.govt.nz/-/media/project/ir/tp/publications/2018/2018-other-mts-cabinet-papers/2018-other-mts-cabinet-papers-3-1-paye-pdf.pdf" target="_blank" rel="noopener noreferrer">薪資收現年度</a></li></ul>
+<!-- model:sources:end --><p class="muted">官方稅務規則於 2026/10/23 查核。最終結算以 IRD 及實際收入資料為準。</p></div></details>
+    <p class="privacy-note">公開頁只保留班次與金額摘要，不含姓名、銀行帳號、地址、稅號或薪資單影像。試算輸入不會上傳，也沒有分析追蹤。</p>
+  </section>
+</main>
+<footer class="container">資料更新 2026/10/23 · GitHub Pages 靜態網站<br>沒有預定下架日，服務持續依 GitHub 政策與帳號狀態提供。</footer>
+<!-- model:client-data:start -->
+<script id="forecastModel" type="application/json">{"scenarios": {"sunson": {"id": "sunson", "label": "只做 Sunson", "description": "11/19 後沒有其他薪資", "gross": "8650.68", "paye": "1378.88", "interest": "0", "rwt": "0", "income_tax": "908.32", "acc": "151.39", "refund": "319.17"}, "two_jobs": {"id": "two_jobs", "label": "接第二份", "description": "續做至 2/19，3 月不工作", "gross": "17676.47", "paye": "2822.24", "interest": "0", "rwt": "0", "income_tax": "2001.38", "acc": "309.34", "refund": "511.52"}, "planned": {"id": "planned", "label": "原規劃三份", "description": "再從 3/15 開始第三份", "gross": "18363.21", "paye": "2912.42", "interest": "0", "rwt": "0", "income_tax": "2121.56", "acc": "321.36", "refund": "469.50"}}, "monthly": {"gross": "2975.895", "paye": "481.8233333333333333333333333", "net": "2494.071666666666666666666667", "cost": "1343.333333333333333333333333", "saving": "1150.738333333333333333333334"}, "defaultPlan": "planned", "interest": {"account": "ASB Savings On Call", "annual_rate": "0.0025", "annual_gross": null, "annual_rwt": null, "forecast_days": 160, "checked_on": "2026-10-23", "source_url": "https://www.asb.co.nz/bank-accounts/interest-rates-fees.html", "basis": "使用者更正銀行為 ASB，確認 Savings On Call；現行 0.25% 自 2026/7/15 生效。存款餘額、實收利息及 RWT 待確認，基準未計利息。", "effective_at": "2026/7/15 09:00"}, "updated": "2026-10-23"}</script>
+<!-- model:client-data:end -->
 </body>
 </html>

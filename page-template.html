@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#214b40">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="Sunson 工作排班、實際薪資與紐西蘭退稅情境。資料更新 {{UPDATED}}，明確標示實績、班表與估算。">
+  <link rel="canonical" href="https://gpt.greenparty.org.tw/sunson-work-payroll-summary/">
+  <link rel="stylesheet" href="site.css?v={{REVISION}}">
+  <script src="site.js?v={{REVISION}}" defer></script>
+  <title>Sunson 工作收支｜薪資與退稅</title>
+</head>
+<body>
+<a class="skip-link" href="#main">跳到主要內容</a>
+<header class="page-header container">
+  <div><p class="eyebrow">SUNSON · 紐西蘭打工度假</p><h1>工作收支</h1><p class="header-description">排班、薪資與退稅，一頁查看。</p></div>
+  <button id="shareButton" class="share-button" type="button">複製網址 <span aria-hidden="true">↗</span></button>
+  <p id="shareStatus" class="sr-only" role="status"></p>
+  <div class="freshness"><!-- model:freshness:start --><!-- model:freshness:end --></div>
+</header>
+<nav class="section-nav" aria-label="頁內導覽"><div class="container"><a href="#overview">總覽</a><a href="#tax">退稅</a><a href="#schedule">班表與發薪</a><a href="#payroll">薪資實績</a></div></nav>
+<main id="main" class="container">
+  <section id="overview" class="page-section">
+    <div class="section-heading"><h2>收支總覽</h2><span class="section-note">金額以 NZD 為主</span></div>
+    <!-- model:overview:start --><!-- model:overview:end -->
+  </section>
+  <section id="tax" class="page-section">
+    <div class="section-heading"><h2>可能退多少稅？</h2><span class="tag estimate">情境估算</span></div>
+    <div class="card tax-card">
+      <!-- model:refund:start --><!-- model:refund:end -->
+      <details class="disclosure"><summary>查看情境、公式與退稅平攤</summary><div class="disclosure-body">
+        <!-- model:refund-detail:start --><!-- model:refund-detail:end -->
+      </div></details>
+      <details class="disclosure"><summary>ASB 利息與 RWT</summary><div class="disclosure-body">
+        <!-- model:bank:start --><!-- model:bank:end -->
+      </div></details>
+      <p id="taxStatus" class="sr-only" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+  <section id="schedule" class="page-section">
+    <div class="section-heading"><h2>班表與發薪</h2><span class="section-note">最後上班 {{LAST_DAY}}</span></div>
+    <div class="schedule-grid">
+      <article class="card"><!-- model:roster:start --><!-- model:roster:end --></article>
+      <article class="card"><div class="subhead"><h3>接下來的發薪日</h3><span class="tag estimate">預估</span></div>
+        <!-- model:paydays:start --><!-- model:paydays:end -->
+      </article>
+    </div>
+    <details class="disclosure standalone"><summary>每週六、日班表公布時程</summary><div class="disclosure-body"><!-- model:publish:start --><!-- model:publish:end --></div></details>
+  </section>
+  <section id="payroll" class="page-section">
+    <div class="section-heading"><h2>薪資實績</h2><span class="tag actual">依薪資單</span></div>
+    <p class="section-intro">最新一期先展開；點日期看稅前、扣繳與計薪工時。</p>
+    <!-- model:actual:start --><!-- model:actual:end -->
+    <details class="disclosure standalone"><summary>核對年度稅務摘要</summary><div class="disclosure-body"><!-- model:tax-proof:start --><!-- model:tax-proof:end --></div></details>
+    <details class="disclosure standalone"><summary>歷史原始班表與每週工時</summary><div class="disclosure-body"><!-- model:weeks:start --><!-- model:weeks:end --></div></details>
+  </section>
+  <section class="page-section" aria-labelledby="sources-title">
+    <div class="section-heading"><h2 id="sources-title">換算與資料基準</h2></div>
+    <div class="fx-card"><!-- model:fx:start --><!-- model:fx:end --></div>
+    <details class="disclosure standalone"><summary>台幣金額對照</summary><div class="disclosure-body"><!-- model:currency-details:start --><!-- model:currency-details:end --></div></details>
+    <details class="disclosure standalone"><summary>薪資、生活費與稅務計算規則</summary><div class="disclosure-body"><!-- model:method:start --><!-- model:method:end --><h3>官方依據</h3><!-- model:sources:start --><!-- model:sources:end --><p class="muted">官方稅務規則於 2026/10/23 查核。最終結算以 IRD 及實際收入資料為準。</p></div></details>
+    <p class="privacy-note">公開頁只保留班次與金額摘要，不含姓名、銀行帳號、地址、稅號或薪資單影像。試算輸入不會上傳，也沒有分析追蹤。</p>
+  </section>
+</main>
+<footer class="container">資料更新 {{UPDATED}} · GitHub Pages 靜態網站<br>沒有預定下架日，服務持續依 GitHub 政策與帳號狀態提供。</footer>
+<!-- model:client-data:start --><!-- model:client-data:end -->
+</body>
+</html>

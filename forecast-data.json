@@ -23,9 +23,9 @@
   },
   "fx": {
     "source": "星展",
-    "buy_rate": "18.34",
-    "sell_rate": "18.73",
-    "quoted_at": "2026/10/23 11:50（台灣時間）",
+    "buy_rate": "18.32",
+    "sell_rate": "18.70",
+    "quoted_at": "2026/10/23 13:30（台灣時間）",
     "source_url": "https://www.dbs.com.tw/personal-zh/rates/foreign-exchange-rates.page"
   },
   "weeks": [
@@ -342,22 +342,37 @@
     {
       "label": "Sunson",
       "start": "2026-08-20",
-      "end": "2026-11-19"
+      "end": "2026-11-19",
+      "status": "confirmed"
     },
     {
       "label": "第二份工作",
       "start": "2026-11-20",
-      "end": "2027-02-19"
+      "end": "2027-02-19",
+      "status": "scenario"
     },
     {
       "label": "第三份工作",
       "start": "2027-03-15",
-      "end": null
+      "end": null,
+      "status": "scenario"
     }
   ],
   "assumptions": [
-    "第二、第三份工作沿用相同時薪、假期加給、平均工時及 Sunson 雙週發薪週期。",
-    "僅估本資料已列紐西蘭薪資；利息、其他收入及稅務抵免未納入。",
-    "未公布的部分週按每週平均時數乘有效日數／7 暫估。"
-  ]
+    "第二、第三份工作日期維持原計畫，但尚未確定；其時薪、工時與雙週薪期僅供情境估算。",
+    "ASB Savings On Call 現行年利率 0.25%；實際利息、RWT 金額及未提供的其他收入或抵免尚未納入薪資基準。",
+    "未公布的部分週按平均時數乘有效日數／7 暫估；已付薪資保留實績。"
+  ],
+  "model_revision": "20261023-review",
+  "bank_interest": {
+    "account": "ASB Savings On Call",
+    "annual_rate": "0.0025",
+    "annual_gross": null,
+    "annual_rwt": null,
+    "forecast_days": 160,
+    "checked_on": "2026-10-23",
+    "source_url": "https://www.asb.co.nz/bank-accounts/interest-rates-fees.html",
+    "basis": "使用者更正銀行為 ASB，確認 Savings On Call；現行 0.25% 自 2026/7/15 生效。存款餘額、實收利息及 RWT 待確認，基準未計利息。",
+    "effective_at": "2026/7/15 09:00"
+  }
 }
