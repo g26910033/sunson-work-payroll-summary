@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-23",
-  "latest_roster_published": "2026-10-16",
+  "updated": "2026-10-24",
+  "latest_roster_published": "2026-10-24",
   "excluded_weeks": [
     1
   ],
@@ -23,9 +23,9 @@
   },
   "fx": {
     "source": "星展",
-    "buy_rate": "18.32",
-    "sell_rate": "18.70",
-    "quoted_at": "2026/10/23 13:30（台灣時間）",
+    "buy_rate": "18.33",
+    "sell_rate": "18.74",
+    "quoted_at": "2026/10/24 13:40（台灣時間）",
     "source_url": "https://www.dbs.com.tw/personal-zh/rates/foreign-exchange-rates.page"
   },
   "weeks": [
@@ -263,6 +263,24 @@
           "role": "Storeman 2"
         }
       ]
+    },
+    {
+      "number": 11,
+      "start": "2026-10-26",
+      "shifts": [
+        {
+          "date": "2026-10-27",
+          "start": "10:00",
+          "end": "18:45",
+          "role": "Cashier 1"
+        },
+        {
+          "date": "2026-10-31",
+          "start": "11:00",
+          "end": "16:00",
+          "role": "Storeman 2"
+        }
+      ]
     }
   ],
   "payslips": [
@@ -363,7 +381,7 @@
     "ASB Savings On Call 現行年利率 0.25%；實際利息、RWT 金額及未提供的其他收入或抵免尚未納入薪資基準。",
     "未公布的部分週按平均時數乘有效日數／7 暫估；已付薪資保留實績。"
   ],
-  "model_revision": "20261023-review",
+  "model_revision": "20261024-roster",
   "bank_interest": {
     "account": "ASB Savings On Call",
     "annual_rate": "0.0025",
