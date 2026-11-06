@@ -23,9 +23,9 @@
   },
   "fx": {
     "source": "星展",
-    "buy_rate": "18.21",
-    "sell_rate": "18.50",
-    "quoted_at": "2026/11/6 11:20（台灣時間）",
+    "buy_rate": "18.18",
+    "sell_rate": "18.47",
+    "quoted_at": "2026/11/6 12:00（台灣時間）",
     "source_url": "https://www.dbs.com.tw/personal-zh/rates/foreign-exchange-rates.page",
     "checked_on": "2026-11-06"
   },
@@ -378,7 +378,12 @@
       "hours": "27.00",
       "gross": "698.38",
       "paye": "92.42",
-      "net": "605.96"
+      "net": "605.96",
+      "deduction_split": {
+        "income_tax": "80.19",
+        "acc": "12.23",
+        "basis": "依 10/23 與 11/6 兩份年度稅務摘要差額核對"
+      }
     }
   ],
   "tax_summary": {
@@ -413,7 +418,7 @@
     "ASB Savings On Call 現行年利率 0.25%；實際利息、RWT 金額及未提供的其他收入或抵免尚未納入薪資基準。",
     "未公布的部分週按平均時數乘有效日數／7 暫估；已付薪資保留實績。"
   ],
-  "model_revision": "20261106-payslip",
+  "model_revision": "20261106-currency-tax",
   "bank_interest": {
     "account": "ASB Savings On Call",
     "annual_rate": "0.0025",

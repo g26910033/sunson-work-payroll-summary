@@ -18,6 +18,7 @@
   <button id="shareButton" class="quiet-button" type="button">分享網址 <span aria-hidden="true">↗</span></button>
   <p id="shareStatus" class="sr-only" role="status"></p>
   <div class="freshness"><!-- model:freshness:start --><!-- model:freshness:end --></div>
+  <p class="currency-basis"><!-- model:currency-basis:start --><!-- model:currency-basis:end --></p>
 </header>
 <nav class="section-nav" aria-label="頁內導覽"><div class="container"><a href="#overview" aria-current="location">總覽</a><a href="#schedule">班表</a><a href="#budget">收支</a><a href="#payroll">薪資</a><a href="#tax">退稅</a><a href="#sources">匯率</a></div></nav>
 <main id="main" class="container">
@@ -29,7 +30,7 @@
     <div class="section-heading"><h2 id="schedule-title">班表與發薪</h2><span class="section-note">最後上班 {{LAST_DAY}}</span></div>
     <div class="schedule-grid">
       <article class="card roster-card"><!-- model:roster:start --><!-- model:roster:end --></article>
-      <article class="card" id="paydays"><div class="subhead"><h3>雙週五發薪</h3><span class="tag estimate">預估 · NZD</span></div><!-- model:paydays:start --><!-- model:paydays:end --></article>
+      <article class="card" id="paydays"><div class="subhead"><h3>雙週五發薪</h3><span class="tag estimate">預估</span></div><!-- model:paydays:start --><!-- model:paydays:end --></article>
     </div>
     <details class="disclosure standalone"><summary>班表公布時程<span class="summary-hint">每週六、日</span></summary><div class="disclosure-body"><!-- model:publish:start --><!-- model:publish:end --></div></details>
     <details class="disclosure standalone"><summary>歷史班表與每週工時</summary><div class="disclosure-body"><!-- model:weeks:start --><!-- model:weeks:end --></div></details>
@@ -42,8 +43,9 @@
   <section id="payroll" class="page-section" aria-labelledby="payroll-title">
     <div class="section-heading"><h2 id="payroll-title">已領薪資</h2><span class="tag actual">薪資單實績</span></div>
     <!-- model:actual-summary:start --><!-- model:actual-summary:end -->
-    <p class="section-intro">點發薪日期，查看稅前、扣繳與計薪工時。</p>
+    <p class="section-intro">稅前、稅後與合計 PAYE 為薪資單實績；所得稅與 ACC 的拆分來源另標。</p>
     <!-- model:actual:start --><!-- model:actual:end -->
+    <details class="disclosure standalone" id="deductionGuide"><summary>為什麼每期扣繳比例不同？<span class="summary-hint">所得稅與 ACC</span></summary><div class="disclosure-body"><!-- model:withholding-guide:start --><!-- model:withholding-guide:end --></div></details>
     <details class="disclosure standalone"><summary>年度稅務摘要核對</summary><div class="disclosure-body"><!-- model:tax-proof:start --><!-- model:tax-proof:end --></div></details>
   </section>
   <section id="tax" class="page-section" aria-labelledby="tax-title">
@@ -60,12 +62,12 @@
   <section id="sources" class="page-section" aria-labelledby="sources-title">
     <div class="section-heading"><h2 id="sources-title">匯率與資料基準</h2><span class="section-note">有日期的牌告快照</span></div>
     <div class="fx-card"><!-- model:fx:start --><!-- model:fx:end --></div>
-    <details class="disclosure standalone"><summary>台幣金額對照</summary><div class="disclosure-body"><!-- model:currency-details:start --><!-- model:currency-details:end --></div></details>
-    <details class="disclosure standalone"><summary>計算規則與官方來源</summary><div class="disclosure-body"><!-- model:method:start --><!-- model:method:end --><h3>官方依據</h3><!-- model:sources:start --><!-- model:sources:end --><p class="muted">官方稅務規則於 2026/10/23 查核。最終結算以 IRD 及實際收入資料為準。</p></div></details>
+    <details class="disclosure standalone"><summary>台幣換算方式</summary><div class="disclosure-body"><!-- model:currency-details:start --><!-- model:currency-details:end --></div></details>
+    <details class="disclosure standalone"><summary>計算規則與官方來源</summary><div class="disclosure-body"><!-- model:method:start --><!-- model:method:end --><h3>官方依據</h3><!-- model:sources:start --><!-- model:sources:end --><p class="muted">PAYE 與 ACC 規則於 2026/11/6 查核。最終結算以 IRD 及實際收入資料為準。</p></div></details>
     <p class="privacy-note">公開頁只保留班次與金額摘要。試算輸入僅留在本頁，不會由此頁程式上傳。</p>
   </section>
 </main>
-<footer class="container"><span>更新 {{UPDATED}} · 金額以 NZD 為主</span><a href="#overview">回到總覽 ↑</a><p>GitHub Pages 免費靜態網站，沒有預定下架日；服務持續依 GitHub 政策與帳號狀態提供。</p></footer>
+<footer class="container"><span>更新 {{UPDATED}} · 紐幣及台幣同步顯示</span><a href="#overview">回到總覽 ↑</a><p>GitHub Pages 免費靜態網站，沒有預定下架日；服務持續依 GitHub 政策與帳號狀態提供。</p></footer>
 <!-- model:client-data:start --><!-- model:client-data:end -->
 </body>
 </html>
