@@ -95,7 +95,9 @@ last_slip = max(actual,key=lambda s:s['pay_date'])
 latest_week = max(weeks,key=lambda w:w['start'])
 latest_start = day(latest_week['start'])
 latest_end = latest_start+timedelta(days=6)
-sunson_end = day(data['jobs'][0]['end'])
+sunson_job = data['jobs'][0]
+sunson_end = day(sunson_job['end'])
+sunson_roster_until = day(sunson_job.get('forecast_until', sunson_job['end']))
 known_days = {day(w['start'])+timedelta(days=i) for w in weeks for i in range(7)}
 covered = {j['label']:max((day(s['period_end']) for s in actual if s.get('job','Sunson')==j['label']),default=tax_start-timedelta(days=1)) for j in data['jobs']}
 anchor = min(day(s['pay_date']) for s in actual)
@@ -111,7 +113,10 @@ def forecast(indices, hours=average, later_cycle=14):
             period_end=payday-timedelta(days=data['pay_period_lag_days'])
             period_start=period_end-timedelta(days=days-1)
             start=max(period_start,day(job['start']),covered[job['label']]+timedelta(days=1))
-            end=min(period_end,day(job['end']) if job['end'] else tax_end)
+            end_limit=day(job['end']) if job['end'] else tax_end
+            if job.get('forecast_until'):
+                end_limit=min(end_limit,day(job['forecast_until']))
+            end=min(period_end,end_limit)
             if start<=end:
                 known_hours,unknown_days=D(0),0
                 for offset in range((end-start).days+1):
@@ -133,12 +138,23 @@ def forecast(indices, hours=average, later_cycle=14):
     return {'gross':gross,'paye':paye,'interest':interest,'rwt':rwt,'income_tax':annual_tax,'acc':levy,'refund':paye+rwt-annual_tax-levy,'future':sorted(future,key=lambda p:(p['pay_date'],p['job_index']))}
 
 
-plans=[('sunson','只做 Sunson','11/19 後沒有其他薪資',[0]),('two_jobs','接第二份','續做至 2/19，3 月不工作',[0,1]),('planned','原規劃三份','再從 3/15 開始第三份',[0,1,2])]
+plans=[('sunson','只做 Sunson','只計至 11/15 已公布班表，之後無其他薪資',[0]),('two_jobs','接第二份','續做至 2/19，3 月不工作',[0,1]),('planned','原規劃三份','再從 3/15 開始第三份',[0,1,2])]
 models={}
 for key,label,description,indices in plans:
     models[key]={'id':key,'label':label,'description':description,**forecast(indices)}
 base=models['planned']
 future_paydays=[p for p in base['future'] if p['job_index']==0]
+pending_paydays=[]
+if sunson_roster_until < sunson_end:
+    payday=anchor
+    while payday <= tax_end:
+        period_end=payday-timedelta(days=data['pay_period_lag_days'])
+        period_start=period_end-timedelta(days=cycle-1)
+        start=max(period_start,sunson_roster_until+timedelta(days=1),day(sunson_job['start']),covered[sunson_job['label']]+timedelta(days=1))
+        end=min(period_end,sunson_end)
+        if start<=end:
+            pending_paydays.append({'pay_date':payday,'start':start,'end':end})
+        payday+=timedelta(days=cycle)
 sensitivity=[('原規劃，未公布班次 20 h／週',forecast([0,1,2],D(20))),(f'原規劃，平均 {fmt(average,2)} h／週',base),('原規劃，未公布班次 32 h／週',forecast([0,1,2],D(32))),('後兩份改為週薪（日期相同）',forecast([0,1,2],average,7))]
 
 
@@ -210,13 +226,16 @@ for p in future_paydays:
     period=span(p['period_start'],p['period_end']) if p['end']==p['period_end'] else f'末期至 {md(p["end"])}'
     split=deduction_grid(p['paye'],cent(p['gross']*D(data['acc_rate'])),'預估拆分；合計 PAYE 依 M 公式計算。')
     payrows.append(f'<li><div class="payday-date"><b>{md(p["pay_date"])}（{weekday(p["pay_date"])}）</b><small>{period}</small></div><dl class="payday-values"><div><dt>稅前</dt><dd>{money(p["gross"])}</dd></div><div><dt>稅後</dt><dd>{money(p["net"])}</dd></div></dl><details class="disclosure payday-tax"><summary>所得稅與 ACC 拆分</summary><div class="disclosure-body">{split}</div></details></li>')
-blocks['paydays']=f'<ul class="payday-list">{"".join(payrows)}</ul><p class="muted">已公布班次計入相應薪期；未公布部分按平均 {fmt(average,2)} h／週估算。11/19 最後上班，尾薪暫列原薪期 12/4；若提前結清再更新。</p>'
+pending_note=''.join(f'<p class="muted">目前已公布班表只到 {md(sunson_roster_until)}；{span(p["start"],p["end"])} 尚未收到班表。{md(p["pay_date"])} 可能尾薪暫不估，也未計入退稅；不代表薪資為 0。</p>' for p in pending_paydays)
+blocks['paydays']=f'<ul class="payday-list">{"".join(payrows)}</ul><p class="muted">已公布的 Sunson 班次計入相應薪期；尚未公布的班次不視為已排班。</p>{pending_note}'
 publications=[]
 start=latest_start+timedelta(days=7)
 while start<=sunson_end:
-    publications.append(f'<li><b>{span(start-timedelta(days=2),start-timedelta(days=1))}</b><span>公布 {span(start,start+timedelta(days=6))} 班表</span></li>')
+    publish_start=start-timedelta(days=2)
+    state='預計公布' if publish_start>=asof else '公告日已過，尚未收到'
+    publications.append(f'<li><b>{span(publish_start,start-timedelta(days=1))}</b><span>{state} {span(start,start+timedelta(days=6))} 班表</span></li>')
     start+=timedelta(days=7)
-blocks['publish']='<ul class="publication-list">'+''.join(publications)+'</ul><p class="muted">依每週六、日公布的安排推估；最後一週只工作至 11/19。</p>'
+blocks['publish']='<ul class="publication-list">'+''.join(publications)+'</ul><p class="muted">最新已收到班表至 11/15；其後的班次未列為已排班，待公布後再更新。</p>'
 actual_cards=[]
 for i,s in enumerate(sorted(actual,key=lambda s:s['pay_date'],reverse=True)):
     tax,levy=deduction_split(s)

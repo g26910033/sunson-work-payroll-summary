@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-07",
+  "updated": "2026-11-08",
   "latest_roster_published": "2026-11-07",
   "excluded_weeks": [
     1
@@ -25,9 +25,9 @@
     "source": "星展",
     "buy_rate": "17.98",
     "sell_rate": "18.36",
-    "quoted_at": "2026/11/7 12:00（台灣時間）",
+    "quoted_at": "2026/11/7 18:00（台灣時間）",
     "source_url": "https://www.dbs.com.tw/personal-zh/rates/foreign-exchange-rates.page",
-    "checked_on": "2026-11-07"
+    "checked_on": "2026-11-08"
   },
   "weeks": [
     {
@@ -416,7 +416,8 @@
       "label": "Sunson",
       "start": "2026-08-20",
       "end": "2026-11-19",
-      "status": "confirmed"
+      "status": "confirmed",
+      "forecast_until": "2026-11-15"
     },
     {
       "label": "第二份工作",
@@ -434,9 +435,9 @@
   "assumptions": [
     "第二、第三份工作日期維持原計畫，但尚未確定；其時薪、工時與雙週薪期僅供情境估算。",
     "ASB Savings On Call 現行年利率 0.25%；實際利息、RWT 金額及未提供的其他收入或抵免尚未納入薪資基準。",
-    "未公布的部分週按平均時數乘有效日數／7 暫估；已付薪資保留實績。"
+    "Sunson 班表目前只公布至 11/15；11/16–19 尚未收到班表，12/4 可能尾薪不納入薪資與退稅估算，但不代表薪資為 0。第二、第三份工作的工時仍按平均假設。"
   ],
-  "model_revision": "20261107-roster",
+  "model_revision": "20261108-roster-coverage",
   "bank_interest": {
     "account": "ASB Savings On Call",
     "annual_rate": "0.0025",
