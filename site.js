@@ -69,7 +69,7 @@
       '目前使用自訂匯率 ' + rateFormat.format(rate) + '，僅供試算。';
     if (status.textContent !== statusText) status.textContent = statusText;
     byId('currencyBasis').textContent = !valid ? '匯率未填妥，台幣換算暫不顯示。' :
-      Math.abs(rate - Number(model.fx.buy_rate)) < 0.0000001 ? '台幣依星展買入 ' + rateFormat.format(rate) + ' 換算 · ' + model.fx.quoted_at :
+      Math.abs(rate - Number(model.fx.buy_rate)) < 0.0000001 ? '星展即期買入 ' + rateFormat.format(rate) + ' · ' + model.fx.quote_short :
       '台幣依自訂匯率 ' + rateFormat.format(rate) + ' 換算，僅供試算。';
     document.querySelectorAll('[data-nzd-to-twd]').forEach((element) => {
       const amount = Number(element.dataset.nzdToTwd);
@@ -99,8 +99,8 @@
     const taxLabel = refund < 0 ? '預估補稅' : '預估退稅';
     byId('refundLabel').textContent = taxLabel;
     setMoney(byId('refundValue').closest('.money'), Math.abs(refund));
-    byId('refundBasis').textContent = plan.label + '；' + (key === 'sunson' ? '假設 11/19 後不再領薪。' : '後續工作仍待確認。') +
-      (included ? '已加計所填利息，未填部分未計。' : '尚未含 ASB 實際利息與 RWT。');
+    byId('refundBasis').textContent = plan.description + ' ' +
+      (included ? '已加計所填利息與 RWT。' : '尚未計入 ASB 利息與 RWT。');
     const values = { gross:Number(plan.gross), paye:Number(plan.paye), prepaid_income_tax:Number(plan.prepaid_income_tax), prepaid_acc:Number(plan.prepaid_acc), interest, rwt, income_tax:incomeTax, acc:Number(plan.acc), refund };
     document.querySelectorAll('[data-tax-field]').forEach((element) => {
       const field = element.dataset.taxField;
@@ -158,6 +158,14 @@
       byId('shareStatus').textContent = '請直接複製瀏覽器的網站網址。';
     }
   });
+
+  const lastPayslip = byId('latest-payslip');
+  if (lastPayslip) {
+    if (location.hash === '#latest-payslip') lastPayslip.open = true;
+    document.querySelector('a[href="#latest-payslip"]')?.addEventListener('click', () => {
+      lastPayslip.open = true;
+    });
+  }
 
   const navLinks = [...document.querySelectorAll('.section-nav a')];
   let navFrame;

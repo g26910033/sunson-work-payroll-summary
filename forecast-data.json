@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-08",
+  "updated": "2026-11-20",
   "latest_roster_published": "2026-11-07",
   "excluded_weeks": [
     1
@@ -23,11 +23,11 @@
   },
   "fx": {
     "source": "星展",
-    "buy_rate": "17.98",
-    "sell_rate": "18.36",
-    "quoted_at": "2026/11/7 18:00（台灣時間）",
+    "buy_rate": "18.04",
+    "sell_rate": "18.32",
+    "quoted_at": "2026/11/20 14:40（台灣時間）",
     "source_url": "https://www.dbs.com.tw/personal-zh/rates/foreign-exchange-rates.page",
-    "checked_on": "2026-11-08"
+    "checked_on": "2026-11-20"
   },
   "weeks": [
     {
@@ -318,6 +318,12 @@
           "role": "Storeman 1"
         }
       ]
+    },
+    {
+      "number": 14,
+      "start": "2026-11-16",
+      "status": "confirmed_no_shifts",
+      "shifts": []
     }
   ],
   "payslips": [
@@ -402,6 +408,30 @@
         "acc": "12.23",
         "basis": "依 10/23 與 11/6 兩份年度稅務摘要差額核對"
       }
+    },
+    {
+      "pay_date": "2026-11-20",
+      "period_start": "2026-11-02",
+      "period_end": "2026-11-15",
+      "weeks": [
+        12,
+        13
+      ],
+      "hours": "42.98",
+      "gross": "1111.72",
+      "paye": "172.00",
+      "net": "939.72",
+      "earnings": {
+        "ordinary_hours": "35.23",
+        "ordinary_pay": "843.76",
+        "public_holiday_hours_not_worked": "7.75",
+        "public_holiday_pay": "185.61",
+        "holiday_pay": "82.35"
+      },
+      "year_to_date": {
+        "taxable_earnings": "7658.92",
+        "total_deductions": "1215.46"
+      }
     }
   ],
   "tax_summary": {
@@ -415,9 +445,10 @@
     {
       "label": "Sunson",
       "start": "2026-08-20",
-      "end": "2026-11-19",
-      "status": "confirmed",
-      "forecast_until": "2026-11-15"
+      "end": null,
+      "status": "ended",
+      "previously_planned_end": "2026-11-19",
+      "status_confirmed_on": "2026-11-20"
     },
     {
       "label": "第二份工作",
@@ -435,9 +466,9 @@
   "assumptions": [
     "第二、第三份工作日期維持原計畫，但尚未確定；其時薪、工時與雙週薪期僅供情境估算。",
     "ASB Savings On Call 現行年利率 0.25%；實際利息、RWT 金額及未提供的其他收入或抵免尚未納入薪資基準。",
-    "Sunson 班表目前只公布至 11/15；11/16–19 尚未收到班表，12/4 可能尾薪不納入薪資與退稅估算，但不代表薪資為 0。第二、第三份工作的工時仍按平均假設。"
+    "使用者於 2026/11/20 確認 11/16–22 無班且已離職。離職生效日未提供。Sunson 只列已核對的 7 期薪資，後續工作按假設估算。"
   ],
-  "model_revision": "20261108-roster-coverage",
+  "model_revision": "20261120-closeout",
   "bank_interest": {
     "account": "ASB Savings On Call",
     "annual_rate": "0.0025",

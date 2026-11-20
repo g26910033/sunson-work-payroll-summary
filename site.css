@@ -25,3 +25,73 @@ table{border-collapse:collapse;width:100%;font-size:13px;font-variant-numeric:ta
 .tax-explainer p{font-size:14px}.tax-explainer .muted{font-size:12px}.tax-bands{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:15px}.tax-bands>div{background:var(--mint);border-radius:10px;padding:14px}.tax-bands>div>span{display:block;font-size:12px}.tax-bands b{display:block;font-size:24px;margin:5px 0}.tax-bands small{font-size:12px;color:var(--muted)}.tax-bands .money-nzd{font-size:12px}.tax-bands .money-twd{font-size:11px}.tax-bands .money-inline{display:flex}.math-table .money{text-align:right}.math-table th{max-width:53%}.math-table td{white-space:normal}.math-table tr:nth-child(4){background:#f7f8f2}.spread-card .money-nzd{font-size:19px}.spread-card .money-twd{font-size:12px}.currency-comparison .money-twd{font-size:12px}.cost-list dt>small,.cost-list dd>small{display:block;font-size:12px;color:var(--muted)}.cost-list .money-twd{font-size:12px}.cost-list dd{text-align:right}.cost-list dt .money-inline{display:flex}.input-twd{display:block;margin-top:4px;color:var(--muted);font-size:12px}.input-feedback .money{vertical-align:middle;margin:3px 4px}.input-feedback .money-nzd{font-size:13px}.input-feedback .money-twd{font-size:11px}
 @media(max-width:760px){.currency-basis{font-size:11px;line-height:1.6}.mini-amount .money-nzd{font-size:21px}.mini-amount .money-twd{font-size:11px}.salary-pair .money-nzd{font-size:23px}.budget-line .money-nzd{font-size:20px}.actual-summary{display:flex;flex-wrap:wrap;gap:13px 20px}.actual-summary .money-nzd{font-size:20px}.actual-summary .big-number .money-nzd{font-size:28px}.deduction-grid{grid-template-columns:1fr 1fr;gap:10px}.deduction-grid>div:last-child{grid-column:1/-1}.split-two>div:last-child{grid-column:auto}.deduction-grid dd{font-size:15px}.deduction-grid .money-twd{font-size:11px}.deduction-grid dt{font-size:11px;min-height:33px}.split-two dt{min-height:0}.record-net .money-nzd{font-size:17px}.record-net .money-twd{font-size:11px}.record-grid>div:last-child{grid-column:1/-1}.record-grid .money-nzd{font-size:16px}.payday-values .money-nzd{font-size:20px}.payday-tax .deduction-grid{grid-template-columns:1fr 1fr}.payday-tax .deduction-grid>div:last-child{grid-column:1/-1}.tax-bands{grid-template-columns:1fr;gap:8px}.tax-bands>div{padding:12px}.tax-bands b{font-size:22px;margin:3px 0}.cost-list{font-size:13px}.spread-card .money-nzd{font-size:17px}.spread-card .money-twd{font-size:11px}.currency-comparison .money-nzd{font-size:15px}.currency-comparison .money-twd{font-size:11px}.refund-number .money-nzd{font-size:36px}}
 @media(max-width:360px){.mini-amount .money-nzd{font-size:18px}.mini-amount .money-twd{font-size:10px}.salary-pair .money-nzd{font-size:19px}.budget-line .money-nzd{font-size:18px}.deduction-grid{grid-template-columns:1fr 1fr}.deduction-grid>div:last-child{grid-column:1/-1}.split-two>div:last-child{grid-column:auto}.deduction-grid dt{min-height:0}.payday-values .money-nzd{font-size:18px}.record-net .money-nzd{font-size:16px}.actual-summary .big-number .money-nzd{font-size:26px}.currency-comparison .money-nzd{font-size:13px}.currency-comparison .money-twd{font-size:10px}.cost-list dt .money-inline{flex-direction:column}.cost-list .money-nzd{font-size:13px}.cost-list .money-twd{font-size:11px}}
+
+/* 結算首頁與薪資明細 */
+.page-section, #paydays, #latest-payslip { scroll-margin-top: 70px; }
+.employment-ended .page-header { padding-block: 24px 16px; }
+.employment-ended .page-header .quiet-button { position: static; margin-left: auto; }
+.employment-ended .freshness { flex: 0 1 auto; }
+.employment-ended h1 { font-size: clamp(27px, 7vw, 42px); }
+.employment-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3px 18px;
+  margin-bottom: 12px;
+  padding: 11px 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--mint);
+}
+.employment-strip strong { display: inline-flex; align-items: center; gap: 8px; font-size: 15px; }
+.employment-strip strong > span { width: 8px; height: 8px; border-radius: 50%; background: var(--green); }
+.employment-strip p { display: flex; flex-wrap: wrap; gap: 0 10px; margin: 0; color: var(--muted); font-size: 13px; }
+.employment-strip p > span { white-space: nowrap; }
+.employment-strip p b { color: var(--ink); font-variant-numeric: tabular-nums; }
+.closeout-grid { grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr); gap: 12px; }
+.closeout-grid .mini-card { background: var(--card); }
+.closing-pay .focus-top { margin-bottom: 14px; }
+.closing-pay .big-number .money-nzd { font-size: clamp(36px, 6vw, 54px); font-weight: 780; line-height: 1.15; }
+.closing-pay-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 14px 0 0;
+  padding-top: 13px;
+  border-top: 1px solid #ffffff38;
+}
+.closing-pay-meta dt { color: #d5e4d8; font-size: 12px; }
+.closing-pay-meta dd { margin: 3px 0 0; font-size: 17px; font-weight: 650; }
+.closing-pay .card-link { margin-top: 12px; }
+.employment-ended .schedule-grid { grid-template-columns: minmax(0, 1fr); }
+.employment-ended .shift-list li { padding-block: 12px; }
+.employment-ended .roster-total { margin: 7px 0 0; padding-top: 12px; }
+.earnings-breakdown { margin: 16px 0 0; border: 1px solid var(--line); border-radius: 10px; }
+.earnings-breakdown > div { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 9px 12px; }
+.earnings-breakdown > div + div { border-top: 1px solid var(--line); }
+.earnings-breakdown dt, .earnings-breakdown dd { margin: 0; font-size: 14px; }
+.earnings-breakdown dt small { display: block; color: var(--muted); font-size: 12px; }
+.earnings-breakdown dt small:empty { display: none; }
+.earnings-breakdown dd .money { text-align: right; }
+.week-empty { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 5px 12px; padding: 12px; background: var(--mint); border-radius: 8px; font-size: 13px; }
+#tax .disclosure:first-of-type { margin-top: 16px; }
+
+@media (max-width: 760px) {
+  .employment-ended .page-header { padding-block: 16px 13px; gap: 8px 12px; }
+  .employment-strip { padding: 9px 12px; }
+  .employment-strip p { font-size: 12px; }
+  .closeout-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .closing-pay { padding: 17px 18px; }
+  .closing-pay .focus-top { margin-bottom: 9px; }
+  .closing-pay-meta { margin-top: 11px; padding-top: 9px; }
+  .closing-pay-meta dd { font-size: 15px; }
+  .closing-pay .card-link { margin-top: 8px; padding-top: 8px; }
+  .closeout-grid .mini-card { padding: 12px; }
+}
+
+@media print {
+  .employment-ended .page-header { padding-top: 0; }
+  .employment-strip { print-color-adjust: exact; }
+  .closing-pay .card-link { display: none; }
+}
